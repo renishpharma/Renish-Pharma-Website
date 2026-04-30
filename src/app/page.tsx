@@ -17,24 +17,16 @@ import { cn } from "@/lib/utils";
 
 import ReviewSection from "@/components/ReviewSection";
 import CertificationSection from "@/components/CertificationSection";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero_bg.png"
-            alt="Pharmaceutical Lab"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-white via-white/90 to-transparent" />
-        </div>
+        {/* Dynamic Carousel Background */}
+        <HeroCarousel />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
@@ -73,8 +65,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Trust Badges */}
-              <CertificationSection />
+              {/* Hero removed trust badges to give space for full banner later */}
             </motion.div>
           </div>
         </div>
@@ -98,10 +89,10 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
-              { label: "Products", value: "250+", icon: FlaskConical },
-              { label: "Global Partners", value: "45+", icon: Globe2 },
-              { label: "Expert Staff", value: "120+", icon: Users2 },
-              { label: "Years Excellence", value: "15+", icon: ShieldCheck },
+              { label: "Products", value: "50+", icon: FlaskConical },
+              { label: "Team Members", value: "10+", icon: Globe2 },
+              { label: "Client Satisfaction Rate", value: "96%", icon: Users2 },
+              { label: "Years Excellence", value: "5+", icon: ShieldCheck },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -237,6 +228,21 @@ export default function Home() {
                </Link>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <FeaturedProducts />
+
+      {/* Trust Badges Banner */}
+      <section className="py-16 bg-surface-dark overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+           <h3 className="text-white/60 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Certified By Global Regulatory Bodies</h3>
+           <div className="flex justify-center">
+             <div className="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-4xl border border-white/10">
+               <CertificationSection />
+             </div>
+           </div>
         </div>
       </section>
 

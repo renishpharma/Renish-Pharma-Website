@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Send, 
-  Clock, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  Clock,
   Globe2,
   CheckCircle2,
   Loader2
@@ -33,7 +33,7 @@ export default function ContactUs() {
       {/* Header Section */}
       <section className="bg-brand-primary pt-40 pb-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_20%,#fff_0%,transparent_50%)]" />
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_20%,#fff_0%,transparent_50%)]" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -59,8 +59,8 @@ export default function ContactUs() {
           <div className="lg:col-span-1 space-y-6">
             {[
               { icon: Phone, title: "Phone Number", details: ["+91 91159 90072"], color: "text-blue-600", bg: "bg-blue-50" },
-              { icon: Mail, title: "Email Address", details: ["adminrenish@gmail.com"], color: "text-cyan-600", bg: "bg-cyan-50" },
-              { icon: MapPin, title: "Global Headquarters", details: ["Bailey Rd, Rupaspur Thana,", "Patna, Bihar 801503"], color: "text-indigo-600", bg: "bg-indigo-50" },
+              { icon: Mail, title: "Email Address", details: ["renishpharmaceutical@gmail.com"], color: "text-cyan-600", bg: "bg-cyan-50" },
+              { icon: MapPin, title: "Global Headquarters", details: ["SCO 76, First Floor, C-1, Sector 19, Panchkula 134113"], color: "text-indigo-600", bg: "bg-indigo-50" },
               { icon: Clock, title: "Working Hours", details: ["Mon - Sat: 9:00 AM - 6:00 PM", "Sunday: Closed"], color: "text-orange-600", bg: "bg-orange-50" },
             ].map((card, idx) => (
               <motion.div
@@ -91,13 +91,13 @@ export default function ContactUs() {
               className="bg-white p-12 rounded-5xl shadow-2xl border border-primary-50"
             >
               <h3 className="text-3xl font-bold text-surface-dark mb-8">Send us a Message</h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-surface-dark/60 ml-1">Full Name</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       required
                       placeholder="e.g. John Doe"
                       className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
@@ -105,8 +105,8 @@ export default function ContactUs() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-surface-dark/60 ml-1">Email Address</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       required
                       placeholder="e.g. john@example.com"
                       className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
@@ -117,8 +117,8 @@ export default function ContactUs() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-surface-dark/60 ml-1">Phone Number</label>
-                    <input 
-                      type="tel" 
+                    <input
+                      type="tel"
                       placeholder="e.g. +1 234 567 890"
                       className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                     />
@@ -136,7 +136,7 @@ export default function ContactUs() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-surface-dark/60 ml-1">Your Message</label>
-                  <textarea 
+                  <textarea
                     rows={6}
                     required
                     placeholder="Tell us how we can help you..."
@@ -145,7 +145,7 @@ export default function ContactUs() {
                 </div>
 
                 <div className="pt-4">
-                  <button 
+                  <button
                     disabled={isSubmitting || submitted}
                     className={cn(
                       "w-full py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all text-white",
@@ -178,38 +178,36 @@ export default function ContactUs() {
               With operational centers in 3 continents, we ensure seamless delivery and support across the globe.
             </p>
           </div>
-          
-          <div className="rounded-5xl overflow-hidden shadow-2xl border-8 border-white bg-white relative h-[600px]">
-             <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.553920953683!2d85.0594396!3d25.6121966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed57f05801c409%3A0x676b6d5c58908f51!2sBailey%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1714000000000!5m2!1sen!2sin" 
-               className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" 
-               allowFullScreen 
-               loading="lazy" 
-               referrerPolicy="no-referrer-when-downgrade"
-             ></iframe>
-             
-             {/* Location Overlay Card */}
-             <motion.div 
-               initial={{ opacity: 0, x: 20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               className="absolute top-10 right-10 w-80 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-primary-50 hidden md:block"
-             >
-                <div className="flex items-center gap-3 mb-4">
-                   <div className="w-10 h-10 rounded-xl bg-brand-primary flex items-center justify-center text-white shadow-lg">
-                      <MapPin className="w-5 h-5" />
-                   </div>
-                   <h4 className="font-bold text-surface-dark">Our Headquarters</h4>
+
+          <div className="rounded-5xl overflow-hidden shadow-2xl border-8 border-white bg-white relative h-150">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.771109503807!2d76.83241257617821!3d30.668573274615333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94b02eb98b73%3A0xe62caaf269a81816!2sSBI%20Branch%20Sec%2019%20Panchkula!5e0!3m2!1sen!2sin!4v1777394135341!5m2!1sen!2sin"
+              className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            {/* Location Overlay Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="absolute top-10 right-10 w-80 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-primary-50 hidden md:block"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-brand-primary flex items-center justify-center text-white shadow-lg">
+                  <MapPin className="w-5 h-5" />
                 </div>
-                <p className="text-sm font-medium text-surface-dark/60 leading-relaxed">
-                   Bailey Rd, opposite Indian Oil Petrol Pump,<br />
-                   Rupaspur Thana, Kaliket Nagar,<br />
-                   Patna, Bihar 801503
-                </p>
-                <div className="mt-4 pt-4 border-t border-primary-100">
-                   <p className="text-[10px] font-bold text-brand-secondary uppercase tracking-widest">Plus Code</p>
-                   <p className="text-xs font-bold text-surface-dark">J372+PW Patna, Bihar</p>
-                </div>
-             </motion.div>
+                <h4 className="font-bold text-surface-dark">Our Headquarters</h4>
+              </div>
+              <p className="text-sm font-medium text-surface-dark/60 leading-relaxed">
+                SCO 76, First Floor, C-1, Sector 19, Panchkula 134113
+              </p>
+              <div className="mt-4 pt-4 border-t border-primary-100">
+                <p className="text-[10px] font-bold text-brand-secondary uppercase tracking-widest">Plus Code</p>
+                <p className="text-xs font-bold text-surface-dark">J372+PW Patna, Bihar</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

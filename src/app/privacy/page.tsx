@@ -2,11 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, 
-  Lock, 
-  Eye, 
-  FileText, 
+import {
+  ShieldCheck,
+  Lock,
+  Eye,
+  FileText,
   ChevronRight,
   ShieldAlert,
   Server,
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
       <section className="bg-surface-light pt-44 pb-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-primary-50/50 to-transparent pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
-        
+
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,12 +82,12 @@ export default function PrivacyPolicy() {
               Our commitment to protecting your professional data and ensuring transparency in how we handle healthcare information.
             </p>
             <div className="flex items-center justify-center gap-2 pt-4">
-               <span className="px-4 py-2 rounded-full bg-white border border-primary-100 text-[10px] font-bold text-brand-primary uppercase tracking-widest">
-                 Version 2.0
-               </span>
-               <span className="text-[10px] font-bold text-surface-dark/30 uppercase tracking-widest">
-                 Effective: April 2026
-               </span>
+              <span className="px-4 py-2 rounded-full bg-white border border-primary-100 text-[10px] font-bold text-brand-primary uppercase tracking-widest">
+                Version 2.0
+              </span>
+              <span className="text-[10px] font-bold text-surface-dark/30 uppercase tracking-widest">
+                Effective: April 2026
+              </span>
             </div>
           </motion.div>
         </div>
@@ -105,21 +105,21 @@ export default function PrivacyPolicy() {
               className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start group"
             >
               <div className="md:col-span-1">
-                 <div className={cn(
-                   "w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 group-hover:rotate-6 shadow-sm",
-                   section.bg,
-                   section.color
-                 )}>
-                   <section.icon className="w-6 h-6" />
-                 </div>
+                <div className={cn(
+                  "w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110 group-hover:rotate-6 shadow-sm",
+                  section.bg,
+                  section.color
+                )}>
+                  <section.icon className="w-6 h-6" />
+                </div>
               </div>
               <div className="md:col-span-11 space-y-4">
-                 <h2 className="text-2xl font-bold text-surface-dark tracking-tight flex items-center gap-3">
-                   {section.title}
-                 </h2>
-                 <p className="text-lg text-surface-dark/60 font-medium leading-relaxed">
-                   {section.content}
-                 </p>
+                <h2 className="text-2xl font-bold text-surface-dark tracking-tight flex items-center gap-3">
+                  {section.title}
+                </h2>
+                <p className="text-lg text-surface-dark/60 font-medium leading-relaxed">
+                  {section.content}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -131,21 +131,21 @@ export default function PrivacyPolicy() {
             viewport={{ once: true }}
             className="mt-24 p-12 rounded-5xl bg-surface-light border border-primary-100 relative overflow-hidden text-center"
           >
-             <div className="relative z-10 space-y-6">
-               <h3 className="text-2xl font-bold text-surface-dark">Questions about our privacy practices?</h3>
-               <p className="text-surface-dark/60 font-medium max-w-xl mx-auto">
-                 If you have any questions regarding this privacy policy, you may contact our data protection officer directly.
-               </p>
-               <a 
-                 href="mailto:adminrenish@gmail.com"
-                 className="inline-flex items-center gap-3 bg-brand-primary text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-primary/20 hover:scale-[1.05] transition-all"
-               >
-                 <Mail className="w-5 h-5" />
-                 adminrenish@gmail.com
-               </a>
-             </div>
-             {/* Background Decoration */}
-             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-2xl -mr-16 -mt-16" />
+            <div className="relative z-10 space-y-6">
+              <h3 className="text-2xl font-bold text-surface-dark">Questions about our privacy practices?</h3>
+              <p className="text-surface-dark/60 font-medium max-w-xl mx-auto">
+                If you have any questions regarding this privacy policy, you may contact our data protection officer directly.
+              </p>
+              <a
+                href="mailto:renishpharmaceutical@gmail.com"
+                className="inline-flex items-center gap-3 bg-brand-primary text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-primary/20 hover:scale-[1.05] transition-all"
+              >
+                <Mail className="w-5 h-5" />
+                renishpharmaceutical@gmail.com
+              </a>
+            </div>
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-2xl -mr-16 -mt-16" />
           </motion.div>
         </div>
       </section>

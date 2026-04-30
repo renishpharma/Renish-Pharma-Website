@@ -23,7 +23,6 @@ const categories = [
   "All",
   "Tablets & Capsules",
   "Liquid Orals",
-  "Injectables",
   "Ayurvedic",
   "Nutraceuticals"
 ];

@@ -37,7 +37,7 @@ export default function MaintenancePage() {
             Under <span className="text-brand-primary">Maintenance.</span>
           </h1>
           <p className="text-xl text-surface-dark/60 font-medium max-w-xl mx-auto leading-relaxed">
-            We are currently optimizing our pharmaceutical platform to serve you better. We'll be back online with enhanced clinical data shortly.
+            We are currently optimizing our pharmaceutical platform to serve you better. We&apos;ll be back online with enhanced clinical data shortly.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function MaintenancePage() {
               <Mail className="w-5 h-5" />
             </div>
             <p className="text-xs font-bold text-surface-dark uppercase tracking-widest">Urgent Enquiry</p>
-            <p className="text-sm font-bold text-surface-dark/60">adminrenish@gmail.com</p>
+            <p className="text-sm font-bold text-surface-dark/60">renishpharmaceutical@gmail.com</p>
           </div>
           <div className="space-y-2">
             <div className="w-10 h-10 rounded-xl bg-surface-light flex items-center justify-center text-brand-primary mx-auto">

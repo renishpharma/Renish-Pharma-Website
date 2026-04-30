@@ -2,14 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { 
-  Globe, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Share2, 
-  MessageSquare, 
-  ArrowUpRight 
+import {
+  Globe,
+  Mail,
+  Phone,
+  MapPin,
+  Share2,
+  MessageSquare,
+  ArrowUpRight
 } from "lucide-react";
 import api from "@/lib/api";
 import FeedbackModal from "@/components/FeedbackModal";
@@ -39,7 +39,7 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-  const [footerProducts, setFooterProducts] = useState<{name: string, href: string}[]>([]);
+  const [footerProducts, setFooterProducts] = useState<{ name: string, href: string }[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function Footer() {
     <footer className="bg-white border-t border-primary-50 pt-20 pb-10 overflow-hidden relative">
       {/* Decorative Gradient */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-linear-to-bl from-primary-50/50 to-transparent pointer-events-none" />
-      
+
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Info */}
@@ -82,14 +82,14 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            
+
             <p className="text-surface-dark/60 max-w-sm leading-relaxed font-medium">
               Precision-engineered medicines, backed by global standards and a vision for healthier generations. Our promise, your health.
             </p>
 
             <div className="flex items-center gap-3">
               {[Globe, Share2, MessageSquare].map((Icon, idx) => (
-                <button 
+                <button
                   key={idx}
                   className="w-10 h-10 rounded-xl border border-primary-100 flex items-center justify-center text-surface-dark/40 hover:text-brand-primary hover:border-brand-primary hover:bg-primary-50 transition-all duration-300"
                 >
@@ -98,7 +98,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="flex items-center gap-2 bg-primary-50 text-brand-primary font-bold px-6 py-3 rounded-xl border border-primary-100 hover:bg-brand-primary hover:text-white transition-all group shadow-sm"
             >
@@ -114,7 +114,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {(column.title === "Products" ? footerProducts : column.links).map((link) => (
                   <li key={link.name}>
-                    <Link 
+                    <Link
                       href={link.href}
                       className="text-surface-dark/50 hover:text-brand-primary text-sm font-bold transition-colors flex items-center gap-1 group"
                     >
@@ -144,7 +144,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Email Support</p>
-              <p className="text-sm font-bold text-surface-dark">adminrenish@gmail.com</p>
+              <p className="text-sm font-bold text-surface-dark">renishpharmaceutical@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center gap-4 group">
@@ -153,7 +153,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Global HQ</p>
-              <p className="text-sm font-bold text-surface-dark">Industrial Area, Pharma City, IN</p>
+              <p className="text-sm font-bold text-surface-dark">SCO 76, First Floor, C-1, Sector 19, Panchkula 134113</p>
             </div>
           </div>
         </div>
@@ -169,9 +169,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <FeedbackModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <FeedbackModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </footer>
   );

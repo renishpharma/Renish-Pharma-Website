@@ -16,9 +16,8 @@ export interface Product {
   description: string;
   shortDescription?: string;
   packaging?: string;
-  dimensions?: string;
-  sizes?: string;
-  dosage?: string;
+  composition?: string;
+  featured?: boolean;
   additionalInfo?: string;
   specialCare?: string;
   status: "active" | "inactive";
