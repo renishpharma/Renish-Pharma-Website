@@ -32,6 +32,7 @@ const footerLinks = [
     title: "Resources",
     links: [
       { name: "Product Catalog", href: "/products" },
+      { name: "Blogs", href: "/blogs" },
       { name: "Terms of Service", href: "/terms" },
       { name: "Privacy Policy", href: "/privacy" },
     ],

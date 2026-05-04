@@ -61,7 +61,7 @@ export default function HeroCarousel() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-r from-white via-white/90 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-dark/30" />
       </div>
     );
   }
@@ -87,8 +87,8 @@ export default function HeroCarousel() {
           />
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-0 bg-linear-to-r from-white via-white/90 to-transparent" />
-      
+      <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-dark/30" />
+
       {/* Optional: Carousel Indicators (Dots) */}
       {images.length > 1 && (
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
@@ -96,11 +96,10 @@ export default function HeroCarousel() {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`transition-all duration-300 rounded-full ${
-                idx === currentIndex 
-                  ? "w-8 h-2 bg-brand-primary" 
+              className={`transition-all duration-300 rounded-full ${idx === currentIndex
+                  ? "w-8 h-2 bg-brand-primary"
                   : "w-2 h-2 bg-white/50 hover:bg-white"
-              }`}
+                }`}
             />
           ))}
         </div>

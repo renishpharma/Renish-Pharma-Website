@@ -149,46 +149,47 @@ function ProductsContent() {
                   key={p._id}
                   className="bg-white rounded-4xl border border-primary-50 overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] flex flex-col"
                 >
-                  {/* Image Container */}
-                  <div className="aspect-square relative bg-surface-light overflow-hidden">
-                    <Image
-                      src={p.media?.[0]?.url || "/placeholder-product.png"}
-                      alt={p.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4">
-                       <span className="px-3 py-1 rounded-lg bg-white/90 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-brand-primary shadow-sm">
-                         {p.category}
-                       </span>
+                  <Link href={`/products/${p._id}`} className="flex flex-col h-full w-full">
+                    {/* Image Container */}
+                    <div className="aspect-square relative bg-surface-light overflow-hidden">
+                      <Image
+                        src={p.media?.[0]?.url || "/placeholder-product.png"}
+                        alt={p.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 left-4">
+                         <span className="px-3 py-1 rounded-lg bg-white/90 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest text-brand-primary shadow-sm">
+                           {p.category}
+                         </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="p-8 flex flex-col flex-1 space-y-4">
-                    <div className="space-y-1">
-                      <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">{p.sku}</p>
-                      <h3 className="text-xl font-bold text-surface-dark group-hover:text-brand-primary transition-colors truncate">{p.name}</h3>
-                    </div>
-                    
-                    <p className="text-sm text-surface-dark/60 font-medium line-clamp-2 leading-relaxed">
-                      {p.shortDescription || p.description}
-                    </p>
+                    {/* Content */}
+                    <div className="p-8 flex flex-col flex-1 space-y-4">
+                      <div className="space-y-1">
+                        <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">{p.sku}</p>
+                        <h3 className="text-xl font-bold text-surface-dark group-hover:text-brand-primary transition-colors truncate">{p.name}</h3>
+                      </div>
+                      
+                      <p className="text-sm text-surface-dark/60 font-medium line-clamp-2 leading-relaxed">
+                        {p.shortDescription || p.description}
+                      </p>
 
-                    <div className="pt-4 flex items-center justify-between border-t border-primary-50 mt-auto">
-                       <div className="flex items-center gap-2 text-[10px] font-bold text-brand-secondary uppercase tracking-widest">
-                          <FlaskConical className="w-3 h-3" />
-                          <span>Tested Quality</span>
-                       </div>
-                       <Link 
-                         href={`/products/${p._id}`}
-                         className="w-10 h-10 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"
-                       >
-                         <ChevronRight className="w-5 h-5" />
-                       </Link>
+                      <div className="pt-4 flex items-center justify-between border-t border-primary-50 mt-auto">
+                         <div className="flex items-center gap-2 text-[10px] font-bold text-brand-secondary uppercase tracking-widest">
+                            <FlaskConical className="w-3 h-3" />
+                            <span>Tested Quality</span>
+                         </div>
+                         <div 
+                           className="w-10 h-10 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"
+                         >
+                           <ChevronRight className="w-5 h-5" />
+                         </div>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>

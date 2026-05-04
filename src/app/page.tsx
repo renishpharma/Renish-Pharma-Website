@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  ChevronRight, 
-  ShieldCheck, 
-  Globe2, 
-  FlaskConical, 
+import {
+  ChevronRight,
+  ShieldCheck,
+  Globe2,
+  FlaskConical,
   Users2,
   ArrowRight,
   Play
@@ -19,10 +19,15 @@ import ReviewSection from "@/components/ReviewSection";
 import CertificationSection from "@/components/CertificationSection";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import HeroCarousel from "@/components/HeroCarousel";
+import LatestBlogs from "@/components/LatestBlogs";
+import HomepageEnquiry from "@/components/HomepageEnquiry";
+import InteractiveGlobe from "@/components/InteractiveGlobe";
+import ParallaxElements from "@/components/ParallaxElements";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full relative overflow-hidden">
+      <ParallaxElements />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
         {/* Dynamic Carousel Background */}
@@ -39,12 +44,12 @@ export default function Home() {
                 <span className="flex h-2 w-2 rounded-full bg-brand-primary animate-pulse" />
                 <span className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">Global Healthcare Leader</span>
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-bold text-surface-dark leading-[1.1] tracking-tight mb-8">
                 Professionalism in <br />
                 Every <span className="text-brand-primary">Dose.</span>
               </h1>
-              
+
               <p className="text-xl text-surface-dark/60 font-medium leading-relaxed mb-10 max-w-xl">
                 Precision-engineered medicines, backed by global standards and a vision for healthier generations.
               </p>
@@ -70,17 +75,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Decorative Element */}
-        <motion.div 
+        {/* Decorative Globe Element */}
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 hidden lg:block"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 hidden lg:flex items-center justify-center pr-12 z-20"
         >
-          <div className="relative aspect-square">
-             <div className="absolute inset-0 bg-brand-primary/5 rounded-full animate-pulse" />
-             <div className="absolute inset-10 bg-brand-secondary/5 rounded-full animate-pulse delay-700" />
-          </div>
+          <InteractiveGlobe />
         </motion.div>
       </section>
 
@@ -132,18 +134,18 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-brand-primary/40 to-transparent" />
-                
+
                 {/* Floating Card */}
                 <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl">
-                   <p className="text-lg font-bold text-surface-dark mb-1">Uncompromising Quality</p>
-                   <p className="text-sm text-surface-dark/60 font-medium">Every product undergoes rigorous multi-stage testing in our state-of-the-art facility.</p>
+                  <p className="text-lg font-bold text-surface-dark mb-1">Uncompromising Quality</p>
+                  <p className="text-sm text-surface-dark/60 font-medium">Every product undergoes rigorous multi-stage testing in our state-of-the-art facility.</p>
                 </div>
               </div>
-              
+
               {/* Experience Badge */}
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-secondary rounded-full flex flex-col items-center justify-center text-white shadow-xl rotate-12">
-                 <span className="text-3xl font-bold">15+</span>
-                 <span className="text-[8px] font-bold uppercase tracking-widest text-center">Years of Trust</span>
+                <span className="text-3xl font-bold">15+</span>
+                <span className="text-[8px] font-bold uppercase tracking-widest text-center">Years of Trust</span>
               </div>
             </motion.div>
 
@@ -212,20 +214,26 @@ export default function Home() {
           ].map((cat, idx) => (
             <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="bg-surface-light p-10 rounded-4xl border border-surface-light hover:border-brand-primary/20 transition-all group cursor-pointer shadow-card"
+              className="bg-surface-light rounded-4xl border border-surface-light hover:border-brand-primary/20 transition-all group cursor-pointer shadow-card flex flex-col h-full"
             >
-               <div className={cn("w-16 h-16 rounded-3xl flex items-center justify-center mb-8 shadow-sm", cat.color, cat.text)}>
+              <Link href={`/products?category=${encodeURIComponent(cat.name)}`} className="p-10 flex flex-col h-full w-full">
+                <div className={cn("w-16 h-16 rounded-3xl flex items-center justify-center mb-8 shadow-sm", cat.color, cat.text)}>
                   <FlaskConical className="w-8 h-8" />
-               </div>
-               <h4 className="text-xl font-bold text-surface-dark mb-4">{cat.name}</h4>
-               <p className="text-surface-dark/60 font-medium mb-8 leading-relaxed">
-                 {cat.desc}
-               </p>
-               <Link href={`/products?category=${encodeURIComponent(cat.name)}`} className="flex items-center gap-2 text-sm font-bold text-brand-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
-                 View Items
-                 <ChevronRight className="w-4 h-4" />
-               </Link>
+                </div>
+                <h4 className="text-xl font-bold text-surface-dark mb-4">{cat.name}</h4>
+                <p className="text-surface-dark/60 font-medium mb-8 leading-relaxed flex-grow">
+                  {cat.desc}
+                </p>
+                <div className="flex items-center gap-2 text-sm font-bold text-brand-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all mt-auto">
+                  View Items
+                  <ChevronRight className="w-4 h-4" />
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -234,63 +242,26 @@ export default function Home() {
       {/* Featured Products */}
       <FeaturedProducts />
 
-      {/* Trust Badges Banner */}
-      <section className="py-16 bg-surface-dark overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
-           <h3 className="text-white/60 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Certified By Global Regulatory Bodies</h3>
-           <div className="flex justify-center">
-             <div className="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-4xl border border-white/10">
-               <CertificationSection />
-             </div>
-           </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <ReviewSection />
 
-      {/* Final CTA */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="relative rounded-5xl bg-brand-primary overflow-hidden p-12 md:p-24 text-center text-white">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,#fff_0%,transparent_50%)]" />
-               <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,#01A3D4_0%,transparent_50%)]" />
+      {/* Trust Badges Banner */}
+      <section className="py-16 bg-surface-light overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <h3 className="text-surface-dark/60 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Certified By Global Regulatory Bodies</h3>
+          <div className="flex justify-center">
+            <div className="bg-white p-8 md:p-12 rounded-4xl border border-surface-light shadow-sm">
+              <CertificationSection />
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative z-10 space-y-10 max-w-3xl mx-auto"
-            >
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-                Ready to Partner with <br />
-                Healthcare Leaders?
-              </h2>
-              <p className="text-xl text-white/80 font-medium leading-relaxed">
-                Join our network of global distributors and healthcare providers. Let&apos;s make medicine accessible together.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link
-                  href="/contact-us"
-                  className="w-full sm:w-auto bg-white text-brand-primary font-bold px-12 py-5 rounded-2xl shadow-2xl hover:bg-surface-light transition-all flex items-center justify-center gap-2"
-                >
-                  Partner with Us
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <button className="flex items-center gap-3 font-bold hover:text-white/80 transition-colors">
-                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/10">
-                    <Play className="w-4 h-4 fill-white" />
-                  </div>
-                  <span>Watch Corporate Film</span>
-                </button>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
+
+      {/* Latest Blogs */}
+      <LatestBlogs />
+
+      {/* Enquiry Form */}
+      <HomepageEnquiry />
     </div>
   );
 }
