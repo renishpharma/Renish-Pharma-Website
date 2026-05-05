@@ -108,7 +108,7 @@ export default function FeaturedProducts() {
                   <h4 className="text-xl font-bold text-surface-dark mb-2 line-clamp-1 group-hover:text-brand-primary transition-colors">
                     {product.name}
                   </h4>
-                  <p className="text-sm font-medium text-surface-dark/60 line-clamp-2 mb-6 flex-grow">
+                  <p className="text-sm font-medium text-surface-dark/60 line-clamp-2 mb-6 grow">
                     {product.shortDescription || product.description}
                   </p>
 
