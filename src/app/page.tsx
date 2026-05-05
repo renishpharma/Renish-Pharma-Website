@@ -300,11 +300,12 @@ export default function Home() {
           <h3 className="text-4xl font-bold text-surface-dark">Medicine Categories</h3>
         </div>
 
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
           {[
             { name: "Tablets & Capsules", desc: "Solid dosage forms with precise active ingredients.", color: "bg-blue-50", text: "text-blue-600" },
             { name: "Liquid Orals", desc: "Palatable syrups and suspensions for all ages.", color: "bg-cyan-50", text: "text-cyan-600" },
-            { name: "Injectables", desc: "Sterile solutions for immediate clinical response.", color: "bg-indigo-50", text: "text-indigo-600" },
+            { name: "Ayurvedic", desc: "Time-tested herbal remedies for holistic wellness.", color: "bg-emerald-50", text: "text-emerald-600" },
+            { name: "Others", desc: "Specialized Ointments, Nutraceuticals, and more.", color: "bg-indigo-50", text: "text-indigo-600" },
           ].map((cat, idx) => (
             <motion.div
               key={idx}

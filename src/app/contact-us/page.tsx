@@ -14,18 +14,47 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import api from "@/lib/api";
+
 export default function ContactUs() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "General Enquiry",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(r => setTimeout(r, 2000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    try {
+      await api.post("/enquiries/submit", {
+        ...formData,
+        source: "contact_us"
+      });
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "General Enquiry",
+        message: ""
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Failed to submit contact form", error);
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -114,7 +143,10 @@ export default function ContactUs() {
                       <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Full Name</label>
                       <input
                         type="text"
+                        name="name"
                         required
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="John Doe"
                         className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base"
                       />
@@ -123,7 +155,10 @@ export default function ContactUs() {
                       <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Email Address</label>
                       <input
                         type="email"
+                        name="email"
                         required
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="john@example.com"
                         className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base"
                       />
@@ -135,6 +170,10 @@ export default function ContactUs() {
                       <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Phone Number</label>
                       <input
                         type="tel"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
                         placeholder="+91 00000 00000"
                         className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base"
                       />
@@ -142,7 +181,12 @@ export default function ContactUs() {
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Inquiry Type</label>
                       <div className="relative">
-                        <select className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base appearance-none cursor-pointer">
+                        <select 
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base appearance-none cursor-pointer"
+                        >
                           <option>General Enquiry</option>
                           <option>Product Information</option>
                           <option>Partnership Opportunity</option>
@@ -158,8 +202,11 @@ export default function ContactUs() {
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Your Message</label>
                     <textarea
+                      name="message"
                       rows={4}
                       required
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell us how we can help you..."
                       className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base resize-none"
                     />

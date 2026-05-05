@@ -27,7 +27,8 @@ export default function EnquiryModal({ isOpen, onClose, product }: EnquiryModalP
       role: formData.get("role"),
       quantity: formData.get("quantity"),
       message: formData.get("message"),
-      product: product._id
+      product: product._id,
+      source: "product"
     };
 
     setIsSubmitting(true);

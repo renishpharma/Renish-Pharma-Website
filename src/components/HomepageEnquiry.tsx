@@ -4,19 +4,47 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle2, Loader2, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+import api from "@/lib/api";
 
 export default function HomepageEnquiry() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "General Enquiry",
+    message: ""
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(r => setTimeout(r, 2000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    try {
+      await api.post("/enquiries/submit", {
+        ...formData,
+        source: "homepage"
+      });
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "General Enquiry",
+        message: ""
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Failed to submit enquiry", error);
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -43,7 +71,7 @@ export default function HomepageEnquiry() {
               Send an <span className="text-brand-primary">Enquiry</span>
             </h2>
             <p className="text-base text-surface-dark/60 font-medium max-w-xl mx-auto">
-              Have questions about our products or partnership opportunities? Let us know and we'll get back to you promptly.
+              Have questions about our products or partnership opportunities? Let us know and we&apos;ll get back to you promptly.
             </p>
           </div>
 
@@ -53,7 +81,10 @@ export default function HomepageEnquiry() {
                 <label className="text-xs font-bold text-surface-dark/60 ml-1">Full Name</label>
                 <input
                   type="text"
+                  name="name"
                   required
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="e.g. John Doe"
                   className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                 />
@@ -62,7 +93,10 @@ export default function HomepageEnquiry() {
                 <label className="text-xs font-bold text-surface-dark/60 ml-1">Email Address</label>
                 <input
                   type="email"
+                  name="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="e.g. john@example.com"
                   className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                 />
@@ -74,13 +108,22 @@ export default function HomepageEnquiry() {
                 <label className="text-xs font-bold text-surface-dark/60 ml-1">Phone Number</label>
                 <input
                   type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="e.g. +1 234 567 890"
                   className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                 />
               </div>
               <div className="space-y-1.5">
                 <label className="text-xs font-bold text-surface-dark/60 ml-1">Subject</label>
-                <select className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark appearance-none">
+                <select 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark appearance-none"
+                >
                   <option>General Enquiry</option>
                   <option>Product Information</option>
                   <option>Partnership Opportunity</option>
@@ -91,8 +134,11 @@ export default function HomepageEnquiry() {
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-surface-dark/60 ml-1">Your Message</label>
               <textarea
+                name="message"
                 rows={3}
                 required
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Tell us how we can help you..."
                 className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark resize-none"
               />
