@@ -134,7 +134,7 @@ export default function InteractiveGlobe() {
   }, []);
 
   return (
-    <div id="globe-container" ref={containerRef} className="w-full aspect-square max-w-[800px] mx-auto flex items-center justify-center relative">
+    <div id="globe-container" ref={containerRef} className="w-full aspect-square max-w-200 mx-auto flex items-center justify-center relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(1,163,212,0.1)_0%,transparent_70%)] pointer-events-none rounded-full blur-3xl scale-150" />
     </div>
   );

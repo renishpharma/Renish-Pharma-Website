@@ -204,7 +204,7 @@ export default function ContactUs() {
             </p>
           </div>
 
-          <div className="rounded-5xl overflow-hidden shadow-2xl border-8 border-white bg-white relative h-[600px]">
+          <div className="rounded-5xl overflow-hidden shadow-2xl border-8 border-white bg-white relative h-150">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.771109503807!2d76.83241257617821!3d30.668573274615333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94b02eb98b73%3A0xe62caaf269a81816!2sSBI%20Branch%20Sec%2019%20Panchkula!5e0!3m2!1sen!2sin!4v1777394135341!5m2!1sen!2sin"
               className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
