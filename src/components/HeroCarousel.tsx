@@ -46,7 +46,7 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero_bg.png"
-          alt="Renish Pharmaceuticals"
+          alt="Renish Pharmaceutical"
           fill
           sizes="100vw"
           className="object-cover"

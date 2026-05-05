@@ -8,8 +8,9 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "Renish Pharmaceuticals | Leading Healthcare Solutions",
-  description: "Renish Pharmaceuticals is a premier healthcare company dedicated to delivering high-quality pharmaceutical products and clinical solutions globally.",
+  title: "Renish Pharmaceutical | Leading Healthcare Solutions",
+  description: "Renish Pharmaceutical is a premier healthcare company dedicated to delivering high-quality pharmaceutical products and clinical solutions globally. Top PCD pharma franchise company with monopoly rights and third party manufacturing in Chandigarh and Panchkula.",
+  keywords: ["Pcd pharma franchise", "Monopoly rights", "Third party manufacturing", "In chandigarh", "In panchkula", "Renish Pharmaceutical", "Pharmaceutical company"],
   icons: {
     icon: "/favicon_io/favicon.ico",
     shortcut: "/favicon_io/favicon-32x32.png",

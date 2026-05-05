@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-surface-dark">
-                  Renish <span className="text-brand-primary">Pharmaceuticals</span>
+                  Renish <span className="text-brand-primary">Pharmaceutical</span>
                 </span>
                 <span className="text-[10px] font-bold text-brand-secondary tracking-[0.2em] uppercase -mt-1">
                   Healthcare Excellence
@@ -153,7 +153,7 @@ export default function Footer() {
 
         <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs font-bold text-surface-dark/30 uppercase tracking-[0.2em]">
-            © {new Date().getFullYear()} Renish Pharmaceuticals. All rights reserved.
+            © {new Date().getFullYear()} Renish Pharmaceutical. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <button

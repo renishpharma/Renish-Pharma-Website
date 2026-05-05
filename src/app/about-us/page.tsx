@@ -67,10 +67,10 @@ export default function AboutUs() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                  <p className="text-xl text-surface-dark/60 font-medium leading-relaxed">
-                   Renish Pharmaceuticals is the best PCD pharma franchise company in Chandigarh. We provide professionalism in every dose, by manufacturing precision-engineered medicines, backed by global standards and a vision for healthier generations.
+                   Renish Pharmaceutical is the best PCD pharma franchise company in Chandigarh and Panchkula. We provide professionalism in every dose, by manufacturing precision-engineered medicines, backed by global standards and a vision for healthier generations.
                  </p>
                  <p className="text-lg text-surface-dark/50 font-medium leading-relaxed pt-1">
-                   With our years of experience in this industry and dedicated teamwork as a family, we deal in a general range of pharmaceutical products. We deploy the best skilled and experienced workforce for R&D, quality management, production, packaging, and logistics.
+                   With our years of experience in this industry and dedicated teamwork as a family, we deal in a general range of pharmaceutical products, including third party manufacturing and monopoly rights services. We deploy the best skilled and experienced workforce for R&D, quality management, production, packaging, and logistics.
                  </p>
               </div>
             </motion.div>
@@ -88,8 +88,9 @@ export default function AboutUs() {
            >
              <Image
                src="/images/team.png"
-               alt="Renish Pharma Team"
+               alt="Renish Pharmaceutical Team"
                fill
+               sizes="(max-width: 768px) 100vw, 50vw"
                className="object-cover group-hover:scale-105 transition-transform duration-1000"
              />
              <div className="absolute inset-0 bg-linear-to-t from-brand-primary/40 to-transparent" />
@@ -103,7 +104,7 @@ export default function AboutUs() {
               
               <div className="space-y-8">
                  <p className="text-xl text-surface-dark/70 font-medium leading-relaxed">
-                   We are one of the leading PCD pharma franchise companies in India. Our commitment to excellence is reflected in our state-of-the-art facilities and our unwavering focus on global quality standards.
+                   We are one of the leading PCD pharma franchise companies in India, specializing in monopoly rights and high-quality third party manufacturing. Our commitment to excellence is reflected in our state-of-the-art facilities and our unwavering focus on global quality standards.
                  </p>
                  
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -171,7 +172,7 @@ export default function AboutUs() {
               <div className="space-y-4">
                  <h3 className="text-4xl font-bold text-white">Our Vision</h3>
                  <p className="text-xl text-white/60 font-medium leading-relaxed">
-                   To be recognized as the global benchmark for professionalism and integrity in pharmaceuticals, expanding our family of partners and patients worldwide.
+                   To be recognized as the global benchmark for professionalism and integrity in pharmaceutical, expanding our family of partners and patients worldwide.
                  </p>
               </div>
             </motion.div>
@@ -184,7 +185,7 @@ export default function AboutUs() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
              <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.4em]">Guided by Integrity</h2>
-             <h3 className="text-4xl md:text-5xl font-bold text-surface-dark tracking-tight">The Renish Pharmaceuticals Way</h3>
+             <h3 className="text-4xl md:text-5xl font-bold text-surface-dark tracking-tight">The Renish Pharmaceutical Way</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

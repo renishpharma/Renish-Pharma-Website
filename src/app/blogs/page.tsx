@@ -36,7 +36,7 @@ export default function BlogsPage() {
            </div>
            <h1 className="text-4xl md:text-5xl font-bold text-surface-dark mb-6 tracking-tight">Our Latest <span className="text-brand-primary">Blogs</span></h1>
            <p className="text-lg text-surface-dark/60 font-medium">
-             Stay updated with the latest advancements in pharmaceuticals, health tips, and company news from Renish Pharmaceuticals.
+             Stay updated with the latest advancements in pharmaceuticals, health tips, and company news from Renish Pharmaceutical.
            </p>
         </div>
       </section>

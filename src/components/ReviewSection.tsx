@@ -39,14 +39,14 @@ export default function ReviewSection() {
   if (!loading && reviews.length === 0) return null;
 
   return (
-    <section className="py-24 bg-surface-light overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-surface-light overflow-hidden relative">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="space-y-4">
             <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.3em]">Testimonials</h2>
             <h3 className="text-4xl font-bold text-surface-dark tracking-tight">Trusted by Professionals</h3>
             <p className="text-lg text-surface-dark/60 font-medium max-w-xl">
-              Hear from the doctors, hospitals, and wholesalers who rely on Renish Pharmaceuticals every day.
+              Hear from the doctors, hospitals, and wholesalers who rely on Renish Pharmaceutical every day.
             </p>
           </div>
         </div>

@@ -31,8 +31,8 @@ export default function LatestBlogs() {
   }
 
   return (
-    <section className="py-24 bg-surface-light">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-surface-light relative">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.3em] mb-4">Latest News</h2>
@@ -68,6 +68,7 @@ export default function LatestBlogs() {
                         src={blog.coverImage.url} 
                         alt={blog.title} 
                         fill 
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500" 
                       />
                     ) : (

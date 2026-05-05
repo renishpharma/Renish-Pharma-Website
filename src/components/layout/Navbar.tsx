@@ -55,7 +55,7 @@ export default function Navbar() {
               <Link href="/" className="group flex items-center gap-3">
                 <Image 
                   src="/logo/renishLogo.svg" 
-                  alt="Renish Pharmaceuticals" 
+                  alt="Renish Pharmaceutical" 
                   width={44} 
                   height={44} 
                   className="transition-transform duration-300 group-hover:scale-[1.04]"
@@ -63,7 +63,7 @@ export default function Navbar() {
 
                 <div className="leading-tight">
                   <div className="text-[1.02rem] font-bold tracking-tight text-surface-dark">
-                    Renish <span className="text-brand-primary">Pharmaceuticals</span>
+                    Renish <span className="text-brand-primary">Pharmaceutical</span>
                   </div>
                   <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-secondary/80">
                     Healthcare Excellence

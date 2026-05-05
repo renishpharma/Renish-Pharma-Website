@@ -23,7 +23,8 @@ const categories = [
   "Tablets & Capsules",
   "Liquid Orals",
   "Ayurvedic",
-  "Nutraceuticals"
+  "Nutraceuticals",
+  "Others"
 ];
 
 function ProductsContent() {
