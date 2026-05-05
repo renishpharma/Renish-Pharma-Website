@@ -13,7 +13,7 @@ export default function InteractiveGlobe() {
     const height = containerRef.current.clientHeight;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.5, 1000);
     camera.position.z = 400;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -23,8 +23,8 @@ export default function InteractiveGlobe() {
 
     // Particle Configuration
     const count = 1000; // High density as seen in the reference
-    const radius = 220; // Sphere container size
-    const ballSize = 0.8; // Tiny fixed size as requested
+    const radius = 250; // Sphere container size
+    const ballSize = 0.95; // Tiny fixed size as requested
 
     // Geometry and Material for the "balls"
     const geometry = new THREE.SphereGeometry(ballSize, 8, 8);

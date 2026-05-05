@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
@@ -52,13 +53,17 @@ export default function Navbar() {
           >
             <div className="flex h-16 w-full items-center justify-between px-3 sm:px-4">
               <Link href="/" className="group flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-primary text-lg font-extrabold text-white shadow-[0_10px_20px_rgba(0,0,0,0.10)] transition-transform duration-300 group-hover:scale-[1.04]">
-                  R
-                </div>
+                <Image 
+                  src="/logo/renishLogo.svg" 
+                  alt="Renish Pharmaceuticals" 
+                  width={44} 
+                  height={44} 
+                  className="transition-transform duration-300 group-hover:scale-[1.04]"
+                />
 
                 <div className="leading-tight">
                   <div className="text-[1.02rem] font-bold tracking-tight text-surface-dark">
-                    Renish <span className="text-brand-primary">Pharma</span>
+                    Renish <span className="text-brand-primary">Pharmaceuticals</span>
                   </div>
                   <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-secondary/80">
                     Healthcare Excellence

@@ -8,8 +8,8 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "Renish Pharma | Leading Healthcare Solutions",
-  description: "Renish Pharma is a premier healthcare company dedicated to delivering high-quality pharmaceutical products and clinical solutions globally.",
+  title: "Renish Pharmaceuticals | Leading Healthcare Solutions",
+  description: "Renish Pharmaceuticals is a premier healthcare company dedicated to delivering high-quality pharmaceutical products and clinical solutions globally.",
   icons: {
     icon: "/favicon_io/favicon.ico",
     shortcut: "/favicon_io/favicon-32x32.png",

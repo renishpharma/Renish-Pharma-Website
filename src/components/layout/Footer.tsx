@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-surface-dark">
-                  Renish <span className="text-brand-primary">Pharma</span>
+                  Renish <span className="text-brand-primary">Pharmaceuticals</span>
                 </span>
                 <span className="text-[10px] font-bold text-brand-secondary tracking-[0.2em] uppercase -mt-1">
                   Healthcare Excellence
@@ -89,7 +89,7 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-3">
-              {[Globe, Share2, MessageSquare].map((Icon, idx) => (
+              {[Globe, Share2].map((Icon, idx) => (
                 <button
                   key={idx}
                   className="w-10 h-10 rounded-xl border border-primary-100 flex items-center justify-center text-surface-dark/40 hover:text-brand-primary hover:border-brand-primary hover:bg-primary-50 transition-all duration-300"
@@ -98,14 +98,6 @@ export default function Footer() {
                 </button>
               ))}
             </div>
-
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-2 bg-primary-50 text-brand-primary font-bold px-6 py-3 rounded-xl border border-primary-100 hover:bg-brand-primary hover:text-white transition-all group shadow-sm"
-            >
-              <MessageSquare className="w-4 h-4" />
-              Give Feedback
-            </button>
           </div>
 
           {/* Link Columns */}
@@ -154,18 +146,27 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Global HQ</p>
-              <p className="text-sm font-bold text-surface-dark">SCO 76, First Floor, C-1, Sector 19, Panchkula 134113</p>
+              <p className="text-sm font-bold text-surface-dark leading-snug">SCO 76, First Floor, Sector 19, Panchkula 134113</p>
             </div>
           </div>
         </div>
 
         <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs font-bold text-surface-dark/30 uppercase tracking-[0.2em]">
-            © {new Date().getFullYear()} Renish Pharma. All rights reserved.
+            © {new Date().getFullYear()} Renish Pharmaceuticals. All rights reserved.
           </p>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs font-bold text-surface-dark/40 uppercase tracking-widest">System Status: Optimal</span>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="text-[10px] font-bold text-brand-primary uppercase tracking-widest hover:underline flex items-center gap-1.5"
+            >
+              <MessageSquare className="w-3.5 h-3.5" />
+              Give Feedback
+            </button>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-xs font-bold text-surface-dark/40 uppercase tracking-widest">System Status: Optimal</span>
+            </div>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default function ContactUs() {
   return (
     <div className="flex flex-col w-full">
       {/* Header Section */}
-      <section className="bg-brand-primary pt-40 pb-24 relative overflow-hidden">
+      <section className="bg-brand-primary pt-40 pb-48 md:pb-64 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_20%,#fff_0%,transparent_50%)]" />
         </div>
@@ -53,116 +53,141 @@ export default function ContactUs() {
         </div>
       </section>
 
-      <section className="py-24 container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 -mt-32 relative z-20">
-          {/* Info Cards */}
-          <div className="lg:col-span-1 space-y-6">
-            {[
-              { icon: Phone, title: "Phone Number", details: ["+91 91159 90072"], color: "text-blue-600", bg: "bg-blue-50" },
-              { icon: Mail, title: "Email Address", details: ["renishpharmaceutical@gmail.com"], color: "text-cyan-600", bg: "bg-cyan-50" },
-              { icon: MapPin, title: "Global Headquarters", details: ["SCO 76, First Floor, C-1, Sector 19, Panchkula 134113"], color: "text-indigo-600", bg: "bg-indigo-50" },
-              { icon: Clock, title: "Working Hours", details: ["Mon - Sat: 9:00 AM - 6:00 PM", "Sunday: Closed"], color: "text-orange-600", bg: "bg-orange-50" },
-            ].map((card, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-8 rounded-4xl shadow-xl border border-primary-50 flex items-start gap-6 group hover:scale-[1.02] transition-all"
-              >
-                <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform group-hover:rotate-12", card.bg, card.color)}>
-                  <card.icon className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-surface-dark/40 uppercase tracking-widest mb-3">{card.title}</h4>
-                  {card.details.map((d, i) => (
-                    <p key={i} className="text-lg font-bold text-surface-dark">{d}</p>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+      <section className="pb-24 container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 -mt-32 md:-mt-48 relative z-20">
+          {/* Info Cards Column */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="bg-white/80 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl shadow-brand-primary/10 border border-white relative overflow-hidden group">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-brand-primary/10 transition-colors" />
+               
+               <div className="relative z-10 space-y-10">
+                 <div>
+                    <h3 className="text-2xl font-bold text-surface-dark mb-2">Contact Details</h3>
+                    <p className="text-sm text-surface-dark/60 font-medium">Reach out to us through any of these channels.</p>
+                 </div>
+
+                 <div className="space-y-8">
+                    {[
+                      { icon: Phone, title: "Phone", value: "+91 91159 90072", color: "text-blue-600", bg: "bg-blue-50" },
+                      { icon: Mail, title: "Email", value: "renishpharmaceutical@gmail.com", color: "text-cyan-600", bg: "bg-cyan-50" },
+                      { icon: MapPin, title: "Location", value: "SCO 76, Sector 19, Panchkula", color: "text-indigo-600", bg: "bg-indigo-50" },
+                      { icon: Clock, title: "Hours", value: "Mon-Sat: 9AM - 6PM", color: "text-orange-600", bg: "bg-orange-50" },
+                    ].map((item, idx) => (
+                      <motion.div 
+                        key={idx} 
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="flex items-center gap-5 group/item"
+                      >
+                        <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-all group-hover/item:scale-110 shadow-sm", item.bg, item.color)}>
+                          <item.icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-[0.2em] mb-1">{item.title}</p>
+                          <p className="text-base font-bold text-surface-dark group-hover/item:text-brand-primary transition-colors">{item.value}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                 </div>
+               </div>
+            </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
+          {/* Contact Form Column */}
+          <div className="lg:col-span-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white p-12 rounded-5xl shadow-2xl border border-primary-50"
+              className="bg-white p-8 md:p-16 rounded-[4rem] shadow-2xl border border-primary-50 relative overflow-hidden"
             >
-              <h3 className="text-3xl font-bold text-surface-dark mb-8">Send us a Message</h3>
+              <div className="relative z-10">
+                <div className="mb-12">
+                  <h3 className="text-3xl md:text-4xl font-bold text-surface-dark mb-4">Send a Message</h3>
+                  <p className="text-lg text-surface-dark/60 font-medium">Fill out the form below and we will get back to you shortly.</p>
+                </div>
 
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Full Name</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="John Doe"
+                        className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Email Address</label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="john@example.com"
+                        className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Phone Number</label>
+                      <input
+                        type="tel"
+                        placeholder="+91 00000 00000"
+                        className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Inquiry Type</label>
+                      <div className="relative">
+                        <select className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base appearance-none cursor-pointer">
+                          <option>General Enquiry</option>
+                          <option>Product Information</option>
+                          <option>Partnership Opportunity</option>
+                          <option>Feedback / Suggestion</option>
+                        </select>
+                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
+                           <Phone className="w-4 h-4 rotate-90" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-surface-dark/60 ml-1">Full Name</label>
-                    <input
-                      type="text"
+                    <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Your Message</label>
+                    <textarea
+                      rows={4}
                       required
-                      placeholder="e.g. John Doe"
-                      className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
+                      placeholder="Tell us how we can help you..."
+                      className="w-full bg-surface-light border-2 border-transparent rounded-2xl py-4 px-6 outline-none focus:border-brand-primary/20 focus:bg-white transition-all font-bold text-surface-dark text-base resize-none"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-surface-dark/60 ml-1">Email Address</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="e.g. john@example.com"
-                      className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-surface-dark/60 ml-1">Phone Number</label>
-                    <input
-                      type="tel"
-                      placeholder="e.g. +1 234 567 890"
-                      className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
-                    />
+                  <div className="pt-6">
+                    <button
+                      disabled={isSubmitting || submitted}
+                      className={cn(
+                        "w-full md:w-auto px-12 py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all text-white text-lg",
+                        submitted ? "bg-green-500 shadow-xl" : "bg-brand-primary shadow-2xl shadow-brand-primary/30 hover:scale-[1.02] active:scale-[0.98] hover:bg-brand-primary/90"
+                      )}
+                    >
+                      {isSubmitting ? (
+                        <Loader2 className="w-6 h-6 animate-spin" />
+                      ) : submitted ? (
+                        <CheckCircle2 className="w-6 h-6" />
+                      ) : (
+                        <Send className="w-5 h-5" />
+                      )}
+                      <span>{submitted ? "Message Sent Successfully" : "Send Message Now"}</span>
+                    </button>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-surface-dark/60 ml-1">Subject</label>
-                    <select className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark appearance-none">
-                      <option>General Enquiry</option>
-                      <option>Product Information</option>
-                      <option>Partnership Opportunity</option>
-                      <option>Feedback / Suggestion</option>
-                    </select>
-                  </div>
-                </div>
+                </form>
+              </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-surface-dark/60 ml-1">Your Message</label>
-                  <textarea
-                    rows={6}
-                    required
-                    placeholder="Tell us how we can help you..."
-                    className="w-full bg-surface-light border-none rounded-2xl py-5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark resize-none"
-                  />
-                </div>
-
-                <div className="pt-4">
-                  <button
-                    disabled={isSubmitting || submitted}
-                    className={cn(
-                      "w-full py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all text-white",
-                      submitted ? "bg-green-500 shadow-xl" : "bg-brand-primary shadow-2xl shadow-brand-primary/30 hover:scale-[1.01] active:scale-[0.99] hover:bg-brand-primary/90"
-                    )}
-                  >
-                    {isSubmitting ? (
-                      <Loader2 className="w-6 h-6 animate-spin" />
-                    ) : submitted ? (
-                      <CheckCircle2 className="w-6 h-6" />
-                    ) : (
-                      <Send className="w-5 h-5" />
-                    )}
-                    <span>{submitted ? "Message Sent Successfully" : "Send Message Now"}</span>
-                  </button>
-                </div>
-              </form>
+              {/* Decorative Blur in Form */}
+              <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary-50 rounded-full blur-3xl -mr-32 -mb-32 pointer-events-none" />
             </motion.div>
           </div>
         </div>
@@ -179,7 +204,7 @@ export default function ContactUs() {
             </p>
           </div>
 
-          <div className="rounded-5xl overflow-hidden shadow-2xl border-8 border-white bg-white relative h-150">
+          <div className="rounded-5xl overflow-hidden shadow-2xl border-8 border-white bg-white relative h-[600px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.771109503807!2d76.83241257617821!3d30.668573274615333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f94b02eb98b73%3A0xe62caaf269a81816!2sSBI%20Branch%20Sec%2019%20Panchkula!5e0!3m2!1sen!2sin!4v1777394135341!5m2!1sen!2sin"
               className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"

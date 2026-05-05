@@ -21,7 +21,7 @@ const termSections = [
     icon: CheckCircle,
     color: "text-emerald-600",
     bg: "bg-emerald-50",
-    content: "By accessing and using the Renish Pharma website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree, please do not use our services."
+    content: "By accessing and using the Renish Pharmaceuticals website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree, please do not use our services."
   },
   {
     title: "Non-Commercial Platform",
@@ -35,7 +35,7 @@ const termSections = [
     icon: ShieldCheck,
     color: "text-indigo-600",
     bg: "bg-indigo-50",
-    content: "All content, including product descriptions, images, logos, and technical specifications, is the intellectual property of Renish Pharma. Unauthorized reproduction or commercial use is strictly prohibited."
+    content: "All content, including product descriptions, images, logos, and technical specifications, is the intellectual property of Renish Pharmaceuticals. Unauthorized reproduction or commercial use is strictly prohibited."
   },
   {
     title: "Professional Accuracy",
@@ -49,7 +49,7 @@ const termSections = [
     icon: Scale,
     color: "text-orange-600",
     bg: "bg-orange-50",
-    content: "Renish Pharma shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the information provided on this website."
+    content: "Renish Pharmaceuticals shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the information provided on this website."
   }
 ];
 

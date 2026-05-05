@@ -41,21 +41,13 @@ export default function HeroCarousel() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  if (loading) {
-    return (
-      <div className="absolute inset-0 z-0 flex items-center justify-center bg-surface-light">
-        <Loader2 className="w-12 h-12 text-brand-primary animate-spin" />
-      </div>
-    );
-  }
-
-  if (images.length === 0) {
-    // Fallback to local static image
+  if (loading || images.length === 0) {
+    // Show default initially or as fallback
     return (
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero_bg.png"
-          alt="Pharmaceutical Lab"
+          alt="Renish Pharmaceuticals"
           fill
           sizes="100vw"
           className="object-cover"

@@ -13,8 +13,7 @@ import {
   Package,
   Layers,
   Scale,
-  Loader2,
-  PhoneCall
+  Loader2
 } from "lucide-react";
 import Link from "next/link";
 import api from "@/lib/api";
@@ -167,18 +166,11 @@ export default function ProductDetail() {
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
                <button 
                  onClick={() => setIsEnquiryOpen(true)}
-                 className="w-full sm:flex-1 bg-brand-primary text-white font-bold py-5 rounded-2xl shadow-2xl shadow-brand-primary/30 flex items-center justify-center gap-2 hover:bg-brand-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                 className="w-full bg-brand-primary text-white font-bold py-5 rounded-2xl shadow-2xl shadow-brand-primary/30 flex items-center justify-center gap-2 hover:bg-brand-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all"
                >
                  Enquire Now
                  <ArrowRight className="w-5 h-5" />
                </button>
-               <a 
-                 href="tel:+1234567890"
-                 className="w-full sm:w-auto px-8 py-5 rounded-2xl border border-primary-100 text-surface-dark font-bold flex items-center justify-center gap-2 hover:bg-surface-light transition-all"
-               >
-                  <PhoneCall className="w-5 h-5 text-brand-secondary" />
-                  Call Support
-               </a>
             </div>
 
             {/* Additional Info Tabs Placeholder */}

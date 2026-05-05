@@ -20,7 +20,7 @@ export default function HomepageEnquiry() {
   };
 
   return (
-    <section className="py-24 bg-brand-primary relative overflow-hidden">
+    <section className="py-16 bg-brand-primary relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,#fff_0%,transparent_50%)]" />
@@ -28,53 +28,59 @@ export default function HomepageEnquiry() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto bg-white rounded-5xl shadow-2xl p-8 md:p-16">
-          <div className="text-center mb-12">
-            <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-brand-primary mx-auto mb-6">
-              <MessageSquare className="w-8 h-8" />
+        <motion.div 
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl mx-auto bg-white rounded-5xl shadow-2xl p-8 md:p-12"
+        >
+          <div className="text-center mb-10">
+            <div className="w-14 h-14 bg-primary-50 rounded-2xl flex items-center justify-center text-brand-primary mx-auto mb-6">
+              <MessageSquare className="w-7 h-7" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-surface-dark mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-surface-dark mb-3">
               Send an <span className="text-brand-primary">Enquiry</span>
             </h2>
-            <p className="text-lg text-surface-dark/60 font-medium max-w-2xl mx-auto">
-              Have questions about our products or partnership opportunities? Let us know and our team will get back to you promptly.
+            <p className="text-base text-surface-dark/60 font-medium max-w-xl mx-auto">
+              Have questions about our products or partnership opportunities? Let us know and we'll get back to you promptly.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-surface-dark/60 ml-1">Full Name</label>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-surface-dark/60 ml-1">Full Name</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. John Doe"
-                  className="w-full bg-surface-light border-none rounded-2xl py-4 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
+                  className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-surface-dark/60 ml-1">Email Address</label>
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-surface-dark/60 ml-1">Email Address</label>
                 <input
                   type="email"
                   required
                   placeholder="e.g. john@example.com"
-                  className="w-full bg-surface-light border-none rounded-2xl py-4 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
+                  className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-surface-dark/60 ml-1">Phone Number</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-surface-dark/60 ml-1">Phone Number</label>
                 <input
                   type="tel"
                   placeholder="e.g. +1 234 567 890"
-                  className="w-full bg-surface-light border-none rounded-2xl py-4 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
+                  className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-surface-dark/60 ml-1">Subject</label>
-                <select className="w-full bg-surface-light border-none rounded-2xl py-4 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark appearance-none">
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-surface-dark/60 ml-1">Subject</label>
+                <select className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark appearance-none">
                   <option>General Enquiry</option>
                   <option>Product Information</option>
                   <option>Partnership Opportunity</option>
@@ -82,13 +88,13 @@ export default function HomepageEnquiry() {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-surface-dark/60 ml-1">Your Message</label>
+            <div className="space-y-1.5">
+              <label className="text-xs font-bold text-surface-dark/60 ml-1">Your Message</label>
               <textarea
-                rows={4}
+                rows={3}
                 required
                 placeholder="Tell us how we can help you..."
-                className="w-full bg-surface-light border-none rounded-2xl py-4 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark resize-none"
+                className="w-full bg-surface-light border-none rounded-2xl py-3.5 px-6 outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all font-bold text-surface-dark resize-none"
               />
             </div>
 
@@ -96,22 +102,22 @@ export default function HomepageEnquiry() {
               <button
                 disabled={isSubmitting || submitted}
                 className={cn(
-                  "w-full py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all text-white text-lg",
+                  "w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all text-white text-base",
                   submitted ? "bg-green-500 shadow-xl" : "bg-brand-primary shadow-2xl shadow-brand-primary/30 hover:scale-[1.01] active:scale-[0.99] hover:bg-brand-primary/90"
                 )}
               >
                 {isSubmitting ? (
-                  <Loader2 className="w-6 h-6 animate-spin" />
+                  <Loader2 className="w-5 h-5 animate-spin" />
                 ) : submitted ? (
-                  <CheckCircle2 className="w-6 h-6" />
+                  <CheckCircle2 className="w-5 h-5" />
                 ) : (
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4" />
                 )}
                 <span>{submitted ? "Enquiry Sent Successfully" : "Submit Enquiry"}</span>
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -11,7 +11,6 @@ import {
   FlaskConical,
   Users2,
   ArrowRight,
-  Play
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,8 +25,18 @@ import ParallaxElements from "@/components/ParallaxElements";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full relative overflow-hidden">
+    <div className="flex flex-col w-full relative overflow-hidden bg-white">
+      {/* Global Background Pattern */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-0"
+        style={{ backgroundImage: "radial-gradient(#01A3D4 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+
       <ParallaxElements />
+
+      {/* Global Decorative Blobs for Alignment */}
+      <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] bg-primary-50/30 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[40%] right-[-10%] w-[30%] h-[30%] bg-brand-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[70%] left-[-5%] w-[25%] h-[25%] bg-primary-50/40 rounded-full blur-[80px] pointer-events-none" />
+
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
         {/* Dynamic Carousel Background */}
@@ -51,7 +60,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-surface-dark/60 font-medium leading-relaxed mb-10 max-w-xl">
-                Precision-engineered medicines, backed by global standards and a vision for healthier generations.
+                Renish Pharmaceuticals is the <span className="text-brand-primary font-bold">Top PCD pharma franchise company</span> in Chandigarh. We manufacture precision-engineered medicines backed by global standards.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -69,25 +78,26 @@ export default function Home() {
                   Our Story
                 </Link>
               </div>
-
-              {/* Hero removed trust badges to give space for full banner later */}
             </motion.div>
           </div>
         </div>
 
-        {/* Decorative Globe Element */}
+        {/* Decorative Globe Element with Grounding Glow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 hidden lg:flex items-center justify-center pr-12 z-20"
         >
-          <InteractiveGlobe />
+          <div className="relative w-full aspect-square max-w-xl flex items-center justify-center">
+            <div className="absolute inset-0 bg-brand-primary/10 rounded-full blur-[100px] animate-pulse" />
+            <InteractiveGlobe />
+          </div>
         </motion.div>
       </section>
 
       {/* Featured Statistics */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white border-b border-surface-light">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
@@ -98,17 +108,101 @@ export default function Home() {
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex flex-col items-center text-center space-y-3"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  delay: idx * 0.1, 
+                  type: "spring", 
+                  stiffness: 100, 
+                  damping: 15 
+                }}
+                className="flex flex-col items-center text-center space-y-3 p-6 rounded-3xl hover:bg-surface-light transition-colors group cursor-default"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-brand-primary mb-2">
+                <div className="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-brand-primary mb-2 group-hover:rotate-12 transition-transform shadow-sm">
                   <stat.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-4xl font-bold text-surface-dark tracking-tight">{stat.value}</h3>
+                <h3 className="text-3xl md:text-5xl font-bold text-surface-dark tracking-tight">{stat.value}</h3>
                 <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Excellence Pillars Section (Based on Reference Images) */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Showcase Test Tube Background */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-5 pointer-events-none rotate-12">
+          <Image src="/images/test_tube.webp" alt="" fill className="object-contain" />
+        </div>
+
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.3em] mb-4">Our Excellence</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-surface-dark mb-6">Built on Trust & Innovation</h3>
+            <p className="text-lg text-surface-dark/60 font-medium leading-relaxed">
+              Renish Pharmaceuticals is best PCD pharma franchise company in Chandigarh. We provide professionalism in every dose, manufacturing precision-engineered medicines backed by global standards.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "PCD PHARMA FRANCHISE",
+                desc: "We provide pharma franchise opportunities, boosting business growth of pharma professionals through marketing strategies and provision of quality products.",
+                icon: <Users2 className="w-8 h-8" />,
+                color: "bg-blue-50 text-blue-600"
+              },
+              {
+                title: "RESEARCH & INNOVATION",
+                desc: "Our research and development division introduces novel formulations and enhances the existing ones to meet the evolving requirements of patients.",
+                icon: <FlaskConical className="w-8 h-8" />,
+                color: "bg-purple-50 text-purple-600"
+              },
+              {
+                title: "COMPETITIVE PRICING",
+                desc: "We strive to ensure essential medicines remain reachable without compromising their quality, maintaining high standards with competitive pricing.",
+                icon: <ShieldCheck className="w-8 h-8" />,
+                color: "bg-green-50 text-green-600"
+              },
+              {
+                title: "TIMELY DELIVERY",
+                desc: "We ensure fast and reliable delivery across India to support your business without delays, backed by efficient logistics management.",
+                icon: <Globe2 className="w-8 h-8" />,
+                color: "bg-orange-50 text-orange-600"
+              },
+              {
+                title: "MONOPOLY RIGHTS",
+                desc: "Get exclusive monopoly rights in your area to grow your pharma business without competition, ensuring sustainable market presence.",
+                icon: <ShieldCheck className="w-8 h-8" />,
+                color: "bg-cyan-50 text-cyan-600"
+              },
+              {
+                title: "PREMIUM QUALITY PRODUCTS",
+                desc: "We deploy the best skilled and experienced workforce for R&D and production to deliver premium, precision-engineered medicines.",
+                icon: <FlaskConical className="w-8 h-8" />,
+                color: "bg-indigo-50 text-indigo-600"
+              }
+            ].map((pillar, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  delay: idx * 0.1, 
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                className="p-10 rounded-4xl bg-surface-light/50 border border-surface-light hover:border-brand-primary/20 hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/5 transition-all group"
+              >
+                <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500", pillar.color)}>
+                  {pillar.icon}
+                </div>
+                <h4 className="text-xl font-bold text-surface-dark mb-4 group-hover:text-brand-primary transition-colors">{pillar.title}</h4>
+                <p className="text-surface-dark/60 font-medium leading-relaxed">{pillar.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -158,21 +252,21 @@ export default function Home() {
               <div className="space-y-4">
                 <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.3em]">Our Commitment</h2>
                 <h3 className="text-4xl md:text-5xl font-bold text-surface-dark leading-tight">
-                  Our promise, <br />
-                  <span className="text-brand-secondary">Your health.</span>
+                  Top PCD Pharma <br />
+                  <span className="text-brand-secondary">Franchise Company.</span>
                 </h3>
               </div>
 
               <p className="text-lg text-surface-dark/60 font-medium leading-relaxed">
-                Our commitment is clear — delivering quality medicines on time, every time. Quality is our first priority.
+                We deploy a highly skilled workforce for R&D, quality management, and logistics. Our vision is for healthier generations, dealing in a general range of premium pharmaceutical products with years of experience.
               </p>
 
               <div className="space-y-6">
                 {[
-                  "Professionalism in every pill",
-                  "Global standards of healthcare",
-                  "Innovation meets care",
-                  "Reliability and uncompromising quality"
+                  "Exclusive Monopoly Rights",
+                  "Premium Quality Products",
+                  "Professionalism in Every Dose",
+                  "Global Standard Manufacturing"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4">
                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">
@@ -226,7 +320,7 @@ export default function Home() {
                   <FlaskConical className="w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-surface-dark mb-4">{cat.name}</h4>
-                <p className="text-surface-dark/60 font-medium mb-8 leading-relaxed flex-grow">
+                <p className="text-surface-dark/60 font-medium mb-8 leading-relaxed grow">
                   {cat.desc}
                 </p>
                 <div className="flex items-center gap-2 text-sm font-bold text-brand-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all mt-auto">
@@ -249,11 +343,7 @@ export default function Home() {
       <section className="py-16 bg-surface-light overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <h3 className="text-surface-dark/60 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Certified By Global Regulatory Bodies</h3>
-          <div className="flex justify-center">
-            <div className="bg-white p-8 md:p-12 rounded-4xl border border-surface-light shadow-sm">
-              <CertificationSection />
-            </div>
-          </div>
+          <CertificationSection />
         </div>
       </section>
 

@@ -46,7 +46,7 @@ export default function ReviewSection() {
             <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.3em]">Testimonials</h2>
             <h3 className="text-4xl font-bold text-surface-dark tracking-tight">Trusted by Professionals</h3>
             <p className="text-lg text-surface-dark/60 font-medium max-w-xl">
-              Hear from the doctors, hospitals, and wholesalers who rely on Renish Pharma every day.
+              Hear from the doctors, hospitals, and wholesalers who rely on Renish Pharmaceuticals every day.
             </p>
           </div>
         </div>

@@ -8,26 +8,24 @@ export default function ParallaxElements() {
   const { scrollYProgress } = useScroll();
 
   // Parallax: Move up at different speeds to create depth
-  // Left starts lower, moves slower
   const leftY = useTransform(scrollYProgress, [0, 1], ["20vh", "-120vh"]);
-  // Right starts higher, moves faster
   const rightY = useTransform(scrollYProgress, [0, 1], ["40vh", "-180vh"]);
+  const capsuleY = useTransform(scrollYProgress, [0, 1], ["50vh", "-150vh"]);
+  const capsuleRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
   
-  // Fade in after hero (around 0.15 scroll progress)
+  // Fade in after hero, fade out during stats, fade back in for middle sections
   const opacity = useTransform(
     scrollYProgress, 
-    [0, 0.15, 0.25, 0.9, 1], 
-    [0, 0, 0.15, 0.15, 0] // Fade in after hero, fade out before footer
+    [0, 0.05, 0.1, 0.2, 0.3, 0.95, 1], 
+    [0, 0, 0.3, 0, 0.3, 0.3, 0] // Fade out at 0.2 (stats), back in at 0.3
   );
   
-  const scale = useTransform(scrollYProgress, [0.1, 0.3], [0.8, 1]);
-
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       {/* Left Test Tube */}
       <motion.div
-        style={{ y: leftY, opacity, scale }}
-        className="absolute left-[-100px] w-[350px] lg:w-[500px] h-auto aspect-[1/2]"
+        style={{ y: leftY, opacity }}
+        className="absolute left-[-100px] top-0 w-[350px] lg:w-[500px] h-auto aspect-[1/2]"
       >
         <Image
           src="/images/test_tube.webp"
@@ -41,8 +39,8 @@ export default function ParallaxElements() {
 
       {/* Right Test Tube (Flipped) */}
       <motion.div
-        style={{ y: rightY, opacity, scale }}
-        className="absolute right-[-100px] w-[350px] lg:w-[500px] h-auto aspect-[1/2] scale-x-[-1]"
+        style={{ y: rightY, opacity }}
+        className="absolute right-[-100px] top-0 w-[350px] lg:w-[500px] h-auto aspect-[1/2] scale-x-[-1]"
       >
         <Image
           src="/images/test_tube.webp"
@@ -51,6 +49,20 @@ export default function ParallaxElements() {
           height={1000}
           className="object-contain"
           priority
+        />
+      </motion.div>
+
+      {/* Floating Capsule */}
+      <motion.div
+        style={{ y: capsuleY, rotate: capsuleRotate, opacity }}
+        className="absolute left-[15%] top-0 w-[80px] lg:w-[120px] h-auto aspect-square blur-[2px]"
+      >
+        <Image
+          src="/images/capsule.webp"
+          alt="Medical Capsule"
+          width={120}
+          height={120}
+          className="object-contain opacity-60"
         />
       </motion.div>
     </div>

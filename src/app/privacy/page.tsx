@@ -22,7 +22,7 @@ const sections = [
     icon: Eye,
     color: "text-blue-600",
     bg: "bg-blue-50",
-    content: "At Renish Pharma, we collect information that helps us provide a better experience and more accurate lead management for our pharmaceutical solutions. This includes professional details like your Name, Designation, and Role in Healthcare, as well as contact information such as Email addresses and Phone numbers."
+    content: "At Renish Pharmaceuticals, we collect information that helps us provide a better experience and more accurate lead management for our pharmaceutical solutions. This includes professional details like your Name, Designation, and Role in Healthcare, as well as contact information such as Email addresses and Phone numbers."
   },
   {
     id: "usage",
@@ -38,7 +38,7 @@ const sections = [
     icon: ShieldAlert,
     color: "text-indigo-600",
     bg: "bg-indigo-50",
-    content: "We implement enterprise-grade security protocols to protect your professional data. All lead submissions are encrypted and stored in our secure administrative dashboard, accessible only by authorized Renish Pharma personnel."
+    content: "We implement enterprise-grade security protocols to protect your professional data. All lead submissions are encrypted and stored in our secure administrative dashboard, accessible only by authorized Renish Pharmaceuticals personnel."
   },
   {
     id: "sharing",
@@ -46,7 +46,7 @@ const sections = [
     icon: Server,
     color: "text-cyan-600",
     bg: "bg-cyan-50",
-    content: "Renish Pharma does not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website or conducting our business, so long as those parties agree to keep this information confidential."
+    content: "Renish Pharmaceuticals does not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website or conducting our business, so long as those parties agree to keep this information confidential."
   },
   {
     id: "consent",
