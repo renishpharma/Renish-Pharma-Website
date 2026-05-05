@@ -54,12 +54,15 @@ export default function Home() {
                 <span className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">Global Healthcare Leader</span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold text-surface-dark leading-[1.1] tracking-tight mb-8">
+              <h1 className="hidden sm:block text-5xl md:text-7xl font-bold text-surface-dark leading-[1.1] tracking-tight mb-8">
                 Professionalism in <br />
                 Every <span className="text-brand-primary">Dose.</span>
               </h1>
+              <h1 className="block sm:hidden text-4xl md:text-7xl font-bold text-surface-dark leading-[1.1] tracking-tight mb-8">
+                Professionalism in Every <span className="text-brand-primary">Dose.</span>
+              </h1>
 
-              <p className="text-xl text-surface-dark/60 font-medium leading-relaxed mb-10 max-w-xl">
+              <p className="text-lg sm:text-xl text-surface-dark/60 font-medium leading-relaxed mb-10 max-w-xl">
                 Renish Pharmaceutical is the <span className="text-brand-primary font-bold">Top PCD pharma franchise company</span> in Chandigarh. We manufacture precision-engineered medicines backed by global standards, offering exclusive monopoly rights and third party manufacturing services.
               </p>
 

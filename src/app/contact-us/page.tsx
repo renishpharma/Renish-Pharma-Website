@@ -129,7 +129,7 @@ export default function ContactUs() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white p-8 md:p-16 rounded-[4rem] shadow-2xl border border-primary-50 relative overflow-hidden"
+              className="bg-white p-8 md:p-16 rounded-[3rem] sm:rounded-[4rem] shadow-2xl border border-primary-50 relative overflow-hidden"
             >
               <div className="relative z-10">
                 <div className="mb-12">

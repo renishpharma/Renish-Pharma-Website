@@ -70,7 +70,7 @@ export default function BlogDetail({ params }: { params: Promise<{ slug: string 
             <div className="flex flex-wrap justify-center gap-2 mb-6">
               {blog.tags.map(tag => (
                 <span key={tag} className="bg-brand-primary/20 text-brand-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-brand-primary/30">
-                  {tag}
+                  {tag.replace(/[\[\]"]/g, '')}
                 </span>
               ))}
             </div>

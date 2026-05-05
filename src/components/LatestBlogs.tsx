@@ -83,7 +83,7 @@ export default function LatestBlogs() {
                       <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                         {blog.tags.slice(0, 2).map(tag => (
                           <span key={tag} className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-[10px] font-bold text-brand-primary uppercase tracking-widest shadow-sm">
-                            {tag}
+                            {tag.replace(/[\[\]"]/g, '')}
                           </span>
                         ))}
                       </div>
