@@ -24,7 +24,7 @@ export default function InteractiveGlobe() {
     // Particle Configuration
     const count = 1000; // High density as seen in the reference
     const radius = 250; // Sphere container size
-    const ballSize = 0.95; // Tiny fixed size as requested
+    const ballSize = 1.0; // Tiny fixed size as requested
 
     // Geometry and Material for the "balls"
     const geometry = new THREE.SphereGeometry(ballSize, 8, 8);

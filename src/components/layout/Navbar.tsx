@@ -42,7 +42,7 @@ export default function Navbar() {
             : "py-5"
         )}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
           <div
             className={cn(
               "flex items-center justify-between rounded-2xl border transition-all duration-300",

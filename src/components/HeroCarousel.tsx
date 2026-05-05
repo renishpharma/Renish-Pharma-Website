@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Loader2 } from "lucide-react";
 import api from "@/lib/api";
 
 interface HeroImage {
@@ -53,7 +52,7 @@ export default function HeroCarousel() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-dark/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-light/30" />
       </div>
     );
   }
@@ -79,7 +78,7 @@ export default function HeroCarousel() {
           />
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-dark/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-light/30" />
 
       {/* Optional: Carousel Indicators (Dots) */}
       {images.length > 1 && (
