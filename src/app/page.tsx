@@ -111,11 +111,11 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ 
-                  delay: idx * 0.1, 
-                  type: "spring", 
-                  stiffness: 100, 
-                  damping: 15 
+                transition={{
+                  delay: idx * 0.1,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
                 }}
                 className="flex flex-col items-center text-center space-y-3 p-6 rounded-3xl hover:bg-surface-light transition-colors group cursor-default"
               >
@@ -190,8 +190,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  delay: idx * 0.1, 
+                transition={{
+                  delay: idx * 0.1,
                   duration: 0.8,
                   ease: [0.16, 1, 0.3, 1]
                 }}
@@ -238,7 +238,7 @@ export default function Home() {
 
               {/* Experience Badge */}
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-secondary rounded-full flex flex-col items-center justify-center text-white shadow-xl rotate-12">
-                <span className="text-3xl font-bold">15+</span>
+                <span className="text-3xl font-bold">5+</span>
                 <span className="text-[8px] font-bold uppercase tracking-widest text-center">Years of Trust</span>
               </div>
             </motion.div>
