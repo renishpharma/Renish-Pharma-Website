@@ -30,15 +30,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${onest.variable} h-full antialiased`}
+      className={`${onest.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="min-h-screen flex flex-col bg-background text-foreground font-sans">
         <Navbar />
         <main className="grow">
           {children}
         </main>
-        <WhatsAppButton />
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

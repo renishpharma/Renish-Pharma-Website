@@ -85,15 +85,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Decorative Globe Element with Grounding Glow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 hidden lg:flex items-center justify-center pr-12 z-20"
+          className="absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 w-full lg:w-1/2 flex items-center justify-center lg:pr-12 z-0 lg:z-20 pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100 mt-10 lg:mt-0"
         >
-          <div className="relative w-full aspect-square max-w-xl flex items-center justify-center">
-            <div className="absolute inset-0 bg-brand-primary/10 rounded-full blur-[100px] animate-pulse" />
+          <div className="relative w-[130%] sm:w-[150%] lg:w-full aspect-square max-w-[500px] sm:max-w-[600px] lg:max-w-xl flex items-center justify-center">
+            <div className="absolute inset-0 bg-brand-primary/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse" />
             <InteractiveGlobe />
           </div>
         </motion.div>

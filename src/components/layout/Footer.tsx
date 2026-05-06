@@ -62,7 +62,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-white border-t border-primary-50 pt-20 pb-10 overflow-hidden relative">
+    <footer className="bg-white border-t border-primary-50 pt-20 pb-24 md:pb-12 relative">
       {/* Decorative Gradient */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-linear-to-bl from-primary-50/50 to-transparent pointer-events-none" />
 

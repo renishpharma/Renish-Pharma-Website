@@ -93,6 +93,18 @@ export default function InteractiveGlobe() {
 
     window.addEventListener("mousemove", handleMouseMove);
 
+    const handleResize = () => {
+      if (!containerRef.current) return;
+      const newWidth = containerRef.current.clientWidth;
+      const newHeight = containerRef.current.clientHeight;
+      
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(newWidth, newHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     // Animation
     let frame: number;
     const animate = () => {
@@ -126,8 +138,14 @@ export default function InteractiveGlobe() {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(frame);
-      if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
+      if (containerRef.current) {
+        // Only remove if it's still a child
+        if (renderer.domElement.parentNode === containerRef.current) {
+          containerRef.current.removeChild(renderer.domElement);
+        }
+      }
       geometry.dispose();
       material.dispose();
     };
