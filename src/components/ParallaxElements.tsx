@@ -35,7 +35,7 @@ export default function ParallaxElements() {
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.08, 0.2, 0.8, 0.92, 1],
-    [0, 0.15, 0.15, 0.15, 0.15, 0]
+    [0, 0.25, 0.25, 0.25, 0.25, 0]
   );
 
   // Smooth everything
@@ -46,7 +46,7 @@ export default function ParallaxElements() {
   return (
     <div className="fixed inset-0 pointer-events-none z-5 overflow-hidden select-none">
 
-      {/* Left */}
+      {/* Left Capsule */}
       <motion.div
         style={{
           y: smoothLeftY,
@@ -56,21 +56,21 @@ export default function ParallaxElements() {
           opacity: smoothOpacity,
           filter: blur,
         }}
-        className="absolute left-[-50px] top-0 w-[350px] lg:w-[500px] aspect-[1/2]"
+        className="absolute left-[-80px] top-0 w-[280px] lg:w-[400px]"
       >
         <Image
-          src="/images/test_tube.webp"
-          alt="Pharma Left"
-          width={500}
-          height={1000}
-          sizes="(max-width: 768px) 350px, 500px"
-          style={{ height: "auto" }}
+          src="/images/capsule_1.webp"
+          alt="Capsule Background"
+          width={400}
+          height={400}
+          sizes="(max-width: 768px) 280px, 400px"
+          style={{ width: "100%", height: "auto" }}
           className="object-contain"
           priority
         />
       </motion.div>
 
-      {/* Right */}
+      {/* Right Tablet */}
       <motion.div
         style={{
           y: smoothRightY,
@@ -80,15 +80,15 @@ export default function ParallaxElements() {
           opacity: smoothOpacity,
           filter: blur,
         }}
-        className="absolute right-[-50px] top-0 w-[350px] lg:w-[500px] aspect-[1/2] scale-x-[-1]"
+        className="absolute right-[-80px] top-0 w-[280px] lg:w-[400px]"
       >
         <Image
-          src="/images/test_tube.webp"
-          alt="Pharma Right"
-          width={500}
-          height={1000}
-          sizes="(max-width: 768px) 350px, 500px"
-          style={{ height: "auto" }}
+          src="/images/tablet.webp"
+          alt="Tablet Background"
+          width={400}
+          height={400}
+          sizes="(max-width: 768px) 280px, 400px"
+          style={{ width: "100%", height: "auto" }}
           className="object-contain"
           priority
         />
