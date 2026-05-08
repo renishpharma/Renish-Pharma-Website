@@ -70,7 +70,7 @@ export default function BlogsPage() {
                     <div className="bg-white rounded-4xl border border-surface-light overflow-hidden hover:border-brand-primary/20 hover:shadow-card transition-all h-full flex flex-col">
                       
                       {/* Image */}
-                      <div className="aspect-[4/3] relative bg-surface-light overflow-hidden">
+                      <div className="aspect-4/3 relative bg-surface-light overflow-hidden">
                         {blog.coverImage ? (
                           <Image 
                             src={blog.coverImage.url} 

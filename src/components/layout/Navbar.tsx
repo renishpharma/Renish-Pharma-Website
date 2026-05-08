@@ -98,7 +98,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              <div className="hidden md:flex items-center">
+              <div className="hidden lg:flex items-center">
                 <Link
                   href="/products"
                   className="inline-flex items-center gap-2 rounded-2xl bg-brand-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary/90 active:translate-y-0"

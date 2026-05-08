@@ -40,13 +40,22 @@ export default function HeroCarousel() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  if (loading || images.length === 0) {
-    // Show default initially or as fallback
+  if (loading) {
+    // Show brand-colored background while checking/loading
+    return (
+      <div className="absolute inset-0 z-0 bg-linear-to-br from-brand-primary/80 to-brand-primary animate-pulse flex items-center justify-center">
+        <div className="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent" />
+      </div>
+    );
+  }
+
+  if (images.length === 0) {
+    // Show fallback image if no backend images are found
     return (
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero_bg.png"
-          alt="Renish Pharmaceutical"
+          alt="Renish Pharmaceutical Fallback"
           fill
           sizes="100vw"
           className="object-cover"

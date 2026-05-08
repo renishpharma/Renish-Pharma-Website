@@ -24,7 +24,7 @@ const categories = [
   "Liquid Orals",
   "Ayurvedic",
   "Nutraceuticals",
-  "Ointment & Cream",
+  "Injections",
   "Others"
 ];
 

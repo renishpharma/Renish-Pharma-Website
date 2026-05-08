@@ -39,27 +39,17 @@ const footerLinks = [
   },
 ];
 
-export default function Footer() {
-  const [footerProducts, setFooterProducts] = useState<{ name: string, href: string }[]>([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const productCategories = [
+  { name: "Tablets & Capsules", href: "/products?category=Tablets %26 Capsules" },
+  { name: "Liquid Orals", href: "/products?category=Liquid Orals" },
+  { name: "Ayurvedic", href: "/products?category=Ayurvedic" },
+  { name: "Nutraceuticals", href: "/products?category=Nutraceuticals" },
+  { name: "Injections", href: "/products?category=Injections" },
+  { name: "Others", href: "/products?category=Others" },
+];
 
-  useEffect(() => {
-    const fetchFooterProducts = async () => {
-      try {
-        const response = await api.get("/product", { params: { limit: 20, status: "active" } });
-        const allProducts = response.data.data;
-        const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 4).map((p: any) => ({
-          name: p.name,
-          href: `/products/${p._id}`
-        }));
-        setFooterProducts(selected);
-      } catch (error) {
-        console.error("Failed to fetch footer products", error);
-      }
-    };
-    fetchFooterProducts();
-  }, []);
+export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <footer className="bg-white border-t border-primary-50 pt-20 pb-24 md:pb-12 relative">
@@ -103,9 +93,11 @@ export default function Footer() {
           {/* Link Columns */}
           {footerLinks.map((column) => (
             <div key={column.title} className="space-y-6">
-              <h4 className="text-sm font-bold text-surface-dark uppercase tracking-widest">{column.title}</h4>
+              <h4 className="text-sm font-bold text-surface-dark uppercase tracking-widest">
+                {column.title === "Products" ? "Categories" : column.title}
+              </h4>
               <ul className="space-y-4">
-                {(column.title === "Products" ? footerProducts : column.links).map((link) => (
+                {(column.title === "Products" ? productCategories : column.links).map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}

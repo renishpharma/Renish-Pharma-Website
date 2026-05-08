@@ -107,3 +107,69 @@ body {
 .shadow-card {
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
 }
+
+/* Prose Overrides for Blog Content */
+.prose img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.prose {
+  max-width: 100% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.prose .ql-align-center {
+  text-align: center;
+}
+
+.prose .ql-align-right {
+  text-align: right;
+}
+
+.prose .ql-align-justify {
+  text-align: justify;
+}
+
+.prose pre {
+  max-width: 100% !important;
+  overflow-x: auto;
+  background-color: #f1f5f9;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--color-primary-500);
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+  color: var(--color-surface-dark);
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.prose th, .prose td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+}

@@ -65,7 +65,7 @@ export default function BlogDetail({ params }: { params: Promise<{ slug: string 
             <ChevronLeft className="w-4 h-4" />
             Back to Blogs
           </Link>
-          
+
           {blog.tags && blog.tags.length > 0 && (
             <div className="flex flex-wrap justify-center gap-2 mb-6">
               {blog.tags.map(tag => (
@@ -91,19 +91,19 @@ export default function BlogDetail({ params }: { params: Promise<{ slug: string 
       {/* Main Cover Image (if exists, displayed cleanly) */}
       {blog.coverImage && (
         <div className="container mx-auto px-6 max-w-5xl -mt-10 relative z-20 mb-16">
-          <div className="aspect-[21/9] w-full relative rounded-4xl overflow-hidden shadow-2xl border-4 border-white">
+          <div className="aspect-21/9 w-full relative rounded-4xl overflow-hidden shadow-2xl border-4 border-white">
             <Image src={blog.coverImage.url} alt={blog.title} fill className="object-cover" priority />
           </div>
         </div>
       )}
 
       {/* Blog Content */}
-      <section className={`container mx-auto px-6 max-w-3xl ${!blog.coverImage ? "pt-16" : ""}`}>
-        <div 
-          className="prose prose-lg prose-headings:font-bold prose-headings:text-surface-dark prose-p:text-surface-dark/80 prose-p:leading-relaxed prose-a:text-brand-primary hover:prose-a:text-primary-600 prose-img:rounded-2xl max-w-none"
+      <section className={`container mx-auto px-6 max-w-4xl ${!blog.coverImage ? "pt-16" : ""}`}>
+        <div
+          className="prose prose-lg prose-headings:font-bold prose-headings:text-surface-dark prose-p:text-surface-dark/80 prose-p:leading-relaxed prose-a:text-brand-primary hover:prose-a:text-primary-600 prose-img:rounded-2xl max-w-none wrap-break-word overflow-x-hidden"
           dangerouslySetInnerHTML={{ __html: cleanContent }}
         />
-        
+
         {/* Author Bio Footer */}
         <div className="mt-20 p-8 rounded-3xl bg-surface-light border border-surface-light flex items-center gap-6">
           <div className="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">

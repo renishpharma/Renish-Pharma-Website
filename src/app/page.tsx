@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -22,6 +21,7 @@ import LatestBlogs from "@/components/LatestBlogs";
 import HomepageEnquiry from "@/components/HomepageEnquiry";
 import InteractiveGlobe from "@/components/InteractiveGlobe";
 import ParallaxElements from "@/components/ParallaxElements";
+import CommitmentCarousel from "@/components/CommitmentCarousel";
 
 export default function Home() {
   return (
@@ -89,9 +89,9 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 w-full lg:w-1/2 flex items-center justify-center lg:pr-12 z-0 lg:z-20 pointer-events-none lg:pointer-events-auto opacity-40 lg:opacity-100 mt-10 lg:mt-0"
+          className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 w-1/2 items-center justify-center pr-12 z-20 pointer-events-auto"
         >
-          <div className="relative w-[130%] sm:w-[150%] lg:w-full aspect-square max-w-[500px] sm:max-w-[600px] lg:max-w-xl flex items-center justify-center">
+          <div className="relative w-[130%] sm:w-[150%] lg:w-full aspect-square max-w-125 sm:max-w-150 lg:max-w-xl flex items-center justify-center">
             <div className="absolute inset-0 bg-brand-primary/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse" />
             <InteractiveGlobe />
           </div>
@@ -108,25 +108,18 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-4/5 rounded-4xl overflow-hidden shadow-2xl relative group">
-                <Image
-                  src="/images/team.png"
-                  alt="Our Team"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-brand-primary/40 to-transparent" />
-
+              <div className="aspect-3/2 rounded-4xl overflow-hidden shadow-2xl relative group">
+                <CommitmentCarousel />
+                
                 {/* Floating Card */}
-                <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl">
+                <div className="absolute hidden md:block bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl z-20">
                   <p className="text-lg font-bold text-surface-dark mb-1">Uncompromising Quality</p>
                   <p className="text-sm text-surface-dark/60 font-medium">Every product undergoes rigorous multi-stage testing in our state-of-the-art facility.</p>
                 </div>
               </div>
 
               {/* Experience Badge */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-secondary rounded-full flex flex-col items-center justify-center text-white shadow-xl rotate-12">
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-secondary rounded-full flex flex-col items-center justify-center text-white shadow-xl rotate-12 z-20">
                 <span className="text-3xl font-bold">5+</span>
                 <span className="text-[8px] font-bold uppercase tracking-widest text-center">Years of Trust</span>
               </div>

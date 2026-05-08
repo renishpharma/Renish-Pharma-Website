@@ -14,6 +14,7 @@ import {
   Users2
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import CommitmentCarousel from "@/components/CommitmentCarousel";
 
 const values = [
   {
@@ -84,16 +85,9 @@ export default function AboutUs() {
            <motion.div 
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             className="relative aspect-square rounded-[4rem] overflow-hidden shadow-3xl border-8 border-white group"
+             className="relative aspect-[3/2] rounded-[4rem] overflow-hidden shadow-3xl border-8 border-white group"
            >
-             <Image
-               src="/images/team.png"
-               alt="Renish Pharmaceutical Team"
-               fill
-               sizes="(max-width: 768px) 100vw, 50vw"
-               className="object-cover group-hover:scale-105 transition-transform duration-1000"
-             />
-             <div className="absolute inset-0 bg-linear-to-t from-brand-primary/40 to-transparent" />
+             <CommitmentCarousel />
            </motion.div>
 
            <div className="space-y-12">

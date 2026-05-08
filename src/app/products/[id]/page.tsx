@@ -141,7 +141,6 @@ export default function ProductDetail() {
                   <span className="px-3 py-1 rounded-lg bg-primary-50 text-brand-primary text-[10px] font-bold uppercase tracking-widest border border-primary-100">
                     {product.category}
                   </span>
-                  <span className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">SKU: {product.sku}</span>
                </div>
                <h1 className="text-4xl md:text-5xl font-bold text-surface-dark leading-tight">{product.name}</h1>
                <p className="text-lg text-surface-dark/60 font-medium leading-relaxed">
@@ -150,16 +149,16 @@ export default function ProductDetail() {
             </div>
 
             {/* Key Specs Row */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                <div className="p-6 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
                   <Package className="w-5 h-5 text-brand-primary" />
                   <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Packaging</p>
-                  <p className="font-bold text-surface-dark truncate">{product.packaging || "N/A"}</p>
+                  <p className="font-bold text-surface-dark">{product.packaging || "N/A"}</p>
                </div>
                <div className="p-6 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
                   <FlaskConical className="w-5 h-5 text-brand-primary" />
                   <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Composition</p>
-                  <p className="font-bold text-surface-dark truncate">{product.composition || "N/A"}</p>
+                  <p className="font-bold text-surface-dark leading-relaxed">{product.composition || "N/A"}</p>
                </div>
             </div>
 
@@ -184,7 +183,6 @@ export default function ProductDetail() {
                   <div className="flex flex-col gap-4">
                      {[
                        { label: "Storage Temperature", value: product.specialCare || "Keep in cool, dry place" },
-                       { label: "Quality Compliance", value: "WHO-GMP / ISO 9001:2015" },
                      ].map((item, i) => (
                        <div key={i} className="flex items-center justify-between py-3 border-b border-surface-light last:border-none">
                           <span className="text-sm font-medium text-surface-dark/40">{item.label}</span>
