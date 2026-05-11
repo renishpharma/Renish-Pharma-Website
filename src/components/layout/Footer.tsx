@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   Globe,
@@ -11,7 +11,6 @@ import {
   MessageSquare,
   ArrowUpRight
 } from "lucide-react";
-import api from "@/lib/api";
 import FeedbackModal from "@/components/FeedbackModal";
 
 const footerLinks = [
@@ -44,7 +43,6 @@ const productCategories = [
   { name: "Liquid Orals", href: "/products?category=Liquid Orals" },
   { name: "Ayurvedic", href: "/products?category=Ayurvedic" },
   { name: "Nutraceuticals", href: "/products?category=Nutraceuticals" },
-  { name: "Injections", href: "/products?category=Injections" },
   { name: "Others", href: "/products?category=Others" },
 ];
 
@@ -120,7 +118,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Call Us</p>
-              <p className="text-sm font-bold text-surface-dark">9115990072</p>
+              <p className="text-sm font-bold text-surface-dark">+91-9115990072</p>
             </div>
           </div>
           <div className="flex items-center gap-4 group">

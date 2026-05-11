@@ -87,40 +87,40 @@ export default function ContactUs() {
           {/* Info Cards Column */}
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white/80 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl shadow-brand-primary/10 border border-white relative overflow-hidden group">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-brand-primary/10 transition-colors" />
-               
-               <div className="relative z-10 space-y-10">
-                 <div>
-                    <h3 className="text-2xl font-bold text-surface-dark mb-2">Contact Details</h3>
-                    <p className="text-sm text-surface-dark/60 font-medium">Reach out to us through any of these channels.</p>
-                 </div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-brand-primary/10 transition-colors" />
 
-                 <div className="space-y-8">
-                    {[
-                      { icon: Phone, title: "Phone", value: "+91 91159 90072", color: "text-blue-600", bg: "bg-blue-50" },
-                      { icon: Mail, title: "Email", value: "renishpharmaceutical@gmail.com", color: "text-cyan-600", bg: "bg-cyan-50" },
-                      { icon: MapPin, title: "Location", value: "SCO 76, Sector 19, Panchkula", color: "text-indigo-600", bg: "bg-indigo-50" },
-                      { icon: Clock, title: "Hours", value: "Mon-Sat: 9AM - 6PM", color: "text-orange-600", bg: "bg-orange-50" },
-                    ].map((item, idx) => (
-                      <motion.div 
-                        key={idx} 
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
-                        className="flex items-center gap-5 group/item"
-                      >
-                        <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-all group-hover/item:scale-110 shadow-sm", item.bg, item.color)}>
-                          <item.icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-[0.2em] mb-1">{item.title}</p>
-                          <p className="text-base font-bold text-surface-dark group-hover/item:text-brand-primary transition-colors">{item.value}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                 </div>
-               </div>
+              <div className="relative z-10 space-y-10">
+                <div>
+                  <h3 className="text-2xl font-bold text-surface-dark mb-2">Contact Details</h3>
+                  <p className="text-sm text-surface-dark/60 font-medium">Reach out to us through any of these channels.</p>
+                </div>
+
+                <div className="space-y-8">
+                  {[
+                    { icon: Phone, title: "Phone", value: "+91 91159 90072", color: "text-blue-600", bg: "bg-blue-50" },
+                    { icon: Mail, title: "Email", value: "renishpharmaceutical@gmail.com", color: "text-cyan-600", bg: "bg-cyan-50" },
+                    { icon: MapPin, title: "Location", value: "SCO 76, Sector 19, Panchkula", color: "text-indigo-600", bg: "bg-indigo-50" },
+                    { icon: Clock, title: "Hours", value: "Mon-Sat: 9AM - 6PM", color: "text-orange-600", bg: "bg-orange-50" },
+                  ].map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="flex items-center gap-5 group/item"
+                    >
+                      <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-all group-hover/item:scale-110 shadow-sm", item.bg, item.color)}>
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-[0.2em] mb-1">{item.title}</p>
+                        <p className="text-base font-bold text-surface-dark group-hover/item:text-brand-primary transition-colors">{item.value}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -181,7 +181,7 @@ export default function ContactUs() {
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-surface-dark/60 ml-1 uppercase tracking-widest">Inquiry Type</label>
                       <div className="relative">
-                        <select 
+                        <select
                           name="subject"
                           value={formData.subject}
                           onChange={handleChange}
@@ -193,7 +193,7 @@ export default function ContactUs() {
                           <option>Feedback / Suggestion</option>
                         </select>
                         <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
-                           <Phone className="w-4 h-4 rotate-90" />
+                          <Phone className="w-4 h-4 rotate-90" />
                         </div>
                       </div>
                     </div>
@@ -245,9 +245,9 @@ export default function ContactUs() {
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-2xl mx-auto space-y-6 mb-16">
             <Globe2 className="w-16 h-16 text-brand-primary mx-auto opacity-20" />
-            <h3 className="text-4xl font-bold text-surface-dark tracking-tight">Our Global Network</h3>
+            <h3 className="text-4xl font-bold text-surface-dark tracking-tight">Where Are We Located</h3>
             <p className="text-lg text-surface-dark/60 font-medium">
-              With operational centers in 3 continents, we ensure seamless delivery and support across the globe.
+              Centrally based in a single, dedicated location, we provide focused expertise and seamless support to our clients worldwide.
             </p>
           </div>
 

@@ -24,7 +24,6 @@ const categories = [
   "Liquid Orals",
   "Ayurvedic",
   "Nutraceuticals",
-  "Injections",
   "Others"
 ];
 
@@ -184,8 +183,8 @@ function ProductsContent() {
 
                       <div className="pt-4 flex items-center justify-between border-t border-primary-50 mt-auto">
                         <div className="flex items-center gap-2 text-[10px] font-bold text-brand-secondary uppercase tracking-widest">
-                          <FlaskConical className="w-3 h-3" />
-                          <span>Tested Quality</span>
+                          <Package className="w-3 h-3" />
+                          <span>{p.packagingType || p.packaging || "Standard"}</span>
                         </div>
                         <div
                           className="w-10 h-10 rounded-xl bg-primary-50 text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all"

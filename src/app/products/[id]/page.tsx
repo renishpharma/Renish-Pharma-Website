@@ -99,14 +99,14 @@ export default function ProductDetail() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="aspect-square relative rounded-5xl bg-surface-light overflow-hidden shadow-2xl border border-primary-50"
+              className="aspect-square relative rounded-4xl bg-surface-light overflow-hidden shadow-2xl border border-primary-50"
             >
               <Image
                 src={product.media[activeImage]?.url || "/placeholder-product.png"}
                 alt={product.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover rounded-4xl"
               />
             </motion.div>
             
@@ -149,13 +149,18 @@ export default function ProductDetail() {
             </div>
 
             {/* Key Specs Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-               <div className="p-6 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
+            <div className="flex flex-wrap gap-6">
+               <div className="p-6 min-w-80 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
+                  <Package className="w-5 h-5 text-brand-primary" />
+                  <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Packaging Type</p>
+                  <p className="font-bold text-surface-dark">{product.packagingType || "N/A"}</p>
+               </div>
+               <div className="p-6 min-w-80 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
                   <Package className="w-5 h-5 text-brand-primary" />
                   <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Packaging</p>
                   <p className="font-bold text-surface-dark">{product.packaging || "N/A"}</p>
                </div>
-               <div className="p-6 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
+               <div className="p-6 min-w-80 rounded-3xl bg-surface-light space-y-2 border border-surface-light hover:border-primary-100 transition-all">
                   <FlaskConical className="w-5 h-5 text-brand-primary" />
                   <p className="text-[10px] font-bold text-surface-dark/40 uppercase tracking-widest">Composition</p>
                   <p className="font-bold text-surface-dark leading-relaxed">{product.composition || "N/A"}</p>

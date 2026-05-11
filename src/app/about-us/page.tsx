@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
   ShieldCheck, 
@@ -85,7 +83,7 @@ export default function AboutUs() {
            <motion.div 
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             className="relative aspect-[3/2] rounded-[4rem] overflow-hidden shadow-3xl border-8 border-white group"
+             className="relative aspect-3/2 rounded-[4rem] overflow-hidden shadow-3xl border-8 border-white group"
            >
              <CommitmentCarousel />
            </motion.div>

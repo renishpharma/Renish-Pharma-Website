@@ -319,7 +319,7 @@ export default function Home() {
                 <p className="text-surface-dark/60 font-medium mb-8 leading-relaxed grow">
                   {cat.desc}
                 </p>
-                <div className="flex items-center gap-2 text-sm font-bold text-brand-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all mt-auto">
+                <div className="flex items-center gap-2 text-sm font-bold text-brand-primary uppercase tracking-widest transition-all mt-auto">
                   View Items
                   <ChevronRight className="w-4 h-4" />
                 </div>

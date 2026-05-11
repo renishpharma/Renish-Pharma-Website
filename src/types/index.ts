@@ -16,6 +16,7 @@ export interface Product {
   description: string;
   shortDescription?: string;
   packaging?: string;
+  packagingType?: string;
   composition?: string;
   featured?: boolean;
   additionalInfo?: string;
