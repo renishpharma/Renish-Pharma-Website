@@ -35,7 +35,7 @@ export default function CommitmentCarousel() {
         >
           <Image
             src={images[currentIndex]}
-            alt={`Commitment Image ${currentIndex + 1}`}
+            alt="Best PCD Pharma Franchise Manufacturing Facility - Renish Pharmaceutical"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover "

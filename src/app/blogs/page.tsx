@@ -34,9 +34,9 @@ export default function BlogsPage() {
            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-6">
               <span className="text-[10px] font-bold text-brand-primary uppercase tracking-widest">Blogs & News</span>
            </div>
-           <h1 className="text-4xl md:text-5xl font-bold text-surface-dark mb-6 tracking-tight">Our Latest <span className="text-brand-primary">Blogs</span></h1>
+           <h1 className="text-4xl md:text-5xl font-bold text-surface-dark mb-6 tracking-tight">Pharma <span className="text-brand-primary">Insights</span></h1>
            <p className="text-lg text-surface-dark/60 font-medium">
-             Stay updated with the latest advancements in pharmaceuticals, health tips, and company news from Renish Pharmaceutical.
+             Expert articles on the best PCD pharma franchise opportunities, monopoly rights, and trends from a top generic pharma company in India.
            </p>
         </div>
       </section>

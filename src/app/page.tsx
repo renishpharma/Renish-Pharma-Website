@@ -24,8 +24,34 @@ import ParallaxElements from "@/components/ParallaxElements";
 import CommitmentCarousel from "@/components/CommitmentCarousel";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "PharmaceuticalBusiness",
+    "name": "Renish Pharmaceutical",
+    "alternateName": "Renish Pharma",
+    "url": "https://renishpharma.com",
+    "logo": "https://renishpharma.com/logo/renishLogo.svg",
+    "description": "Top PCD pharma franchise in india and Best PCD pharma franchise company. Offering monopoly rights and third party manufacturing in Chandigarh, Panchkula, and Himachal.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Panchkula",
+      "addressRegion": "Haryana",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "customer service"
+    },
+    "keywords": "Top PCD pharma franchise in india, Best PCD pharma franchise, Top generic pharma company, Monopoly rights, Third party manufacturing, In chandigarh, In panchkula, In himachal"
+  };
+
   return (
     <div className="flex flex-col w-full relative overflow-hidden ">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Global Background Pattern */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-0"
         style={{ backgroundImage: "radial-gradient(#01A3D4 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
@@ -55,15 +81,16 @@ export default function Home() {
               </div>
 
               <h1 className="hidden sm:block text-5xl md:text-7xl font-bold text-surface-dark leading-[1.1] tracking-tight mb-8">
-                Professionalism in <br />
-                Every <span className="text-brand-primary">Dose.</span>
+                Top PCD Pharma <br />
+                Franchise in <span className="text-brand-primary">India.</span>
               </h1>
               <h1 className="block sm:hidden text-4xl md:text-7xl font-bold text-surface-dark leading-[1.1] tracking-tight mb-8">
-                Professionalism in Every <span className="text-brand-primary">Dose.</span>
+                Best PCD Pharma <br />
+                Franchise <span className="text-brand-primary">Company.</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-surface-dark/60 font-medium leading-relaxed mb-10 max-w-xl">
-                Renish Pharmaceutical is the <span className="text-brand-primary font-bold">Top PCD pharma franchise company</span> in Chandigarh. We manufacture precision-engineered medicines backed by global standards, offering exclusive monopoly rights and third party manufacturing services.
+                Renish Pharmaceutical is the <span className="text-brand-primary font-bold">Top generic pharma company</span> offering monopoly rights and third party manufacturing in Chandigarh, Panchkula, and Himachal.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -110,7 +137,7 @@ export default function Home() {
             >
               <div className="aspect-3/2 rounded-4xl overflow-hidden shadow-2xl relative group">
                 <CommitmentCarousel />
-                
+
                 {/* Floating Card */}
                 <div className="absolute hidden md:block bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl z-20">
                   <p className="text-lg font-bold text-surface-dark mb-1">Uncompromising Quality</p>
@@ -134,13 +161,13 @@ export default function Home() {
               <div className="space-y-4">
                 <h2 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.3em]">Our Commitment</h2>
                 <h3 className="text-4xl md:text-5xl font-bold text-surface-dark leading-tight">
-                  Top PCD Pharma Franchise <br />
-                  <span className="text-brand-secondary">Company in Panchkula.</span>
+                  Best PCD Pharma Franchise <br />
+                  <span className="text-brand-secondary">Company in India.</span>
                 </h3>
               </div>
 
               <p className="text-lg text-surface-dark/60 font-medium leading-relaxed">
-                We deploy a highly skilled workforce for R&D, quality management, and logistics. Our vision is for healthier generations, dealing in a general range of premium pharmaceutical products with years of experience.
+                As a leading generic pharma company, we provide exclusive monopoly rights and third party manufacturing across Chandigarh, Panchkula, and Himachal. Our vision is for healthier generations, backed by years of pharmaceutical excellence.
               </p>
 
               <div className="space-y-6">

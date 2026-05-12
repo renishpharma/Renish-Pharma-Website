@@ -72,11 +72,11 @@ export default function ContactUs() {
           >
             <h1 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.4em] mb-6">Contact Us</h1>
             <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-8">
-              Let&apos;s Start a <br />
-              <span className="text-brand-secondary">Conversation.</span>
+              Work with the Best <br />
+              <span className="text-brand-secondary">PCD Pharma Franchise.</span>
             </h2>
             <p className="text-lg text-white/70 font-medium max-w-2xl mx-auto leading-relaxed">
-              Have questions about our products or partnership opportunities? Our dedicated support team is here to assist you globally.
+              Interested in monopoly rights or third party manufacturing in Chandigarh, Panchkula, or Himachal? Our dedicated support team is here to assist you.
             </p>
           </motion.div>
         </div>
@@ -276,8 +276,8 @@ export default function ContactUs() {
                 SCO 76, First Floor, C-1, Sector 19, Panchkula 134113
               </p>
               <div className="mt-4 pt-4 border-t border-primary-100">
-                <p className="text-[10px] font-bold text-brand-secondary uppercase tracking-widest">Plus Code</p>
-                <p className="text-xs font-bold text-surface-dark">J372+PW Patna, Bihar</p>
+                <p className="text-[10px] font-bold text-brand-secondary uppercase tracking-widest">Office Location</p>
+                <p className="text-xs font-bold text-surface-dark">Sector 19, Panchkula, Haryana</p>
               </div>
             </motion.div>
           </div>

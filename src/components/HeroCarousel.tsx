@@ -70,7 +70,7 @@ export default function HeroCarousel() {
         <div className="hidden lg:block absolute inset-0">
           <Image
             src={desktopUrl}
-            alt="Hero Desktop"
+            alt="Top PCD Pharma Franchise in India - Renish Pharmaceutical"
             fill
             priority={isPriority}
             className="object-cover"
@@ -81,7 +81,7 @@ export default function HeroCarousel() {
         <div className="hidden sm:block lg:hidden absolute inset-0">
           <Image
             src={tabletUrl}
-            alt="Hero Tablet"
+            alt="Best PCD Pharma Franchise Company - Renish Pharmaceutical"
             fill
             priority={isPriority}
             className="object-cover"
@@ -92,7 +92,7 @@ export default function HeroCarousel() {
         <div className="block sm:hidden absolute inset-0">
           <Image
             src={mobileUrl}
-            alt="Hero Mobile"
+            alt="Top Generic Pharma Company in Chandigarh - Renish Pharmaceutical"
             fill
             priority={isPriority}
             className="object-cover"

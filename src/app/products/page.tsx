@@ -73,10 +73,10 @@ function ProductsContent() {
           <div className="max-w-3xl space-y-4 mb-16">
             <h1 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.4em]">Product Catalog</h1>
             <h2 className="text-4xl md:text-6xl font-bold text-surface-dark tracking-tight">
-              Our Healthcare <span className="text-brand-secondary">Solutions.</span>
+              Best PCD Pharma <span className="text-brand-secondary">Franchise Range.</span>
             </h2>
             <p className="text-xl text-surface-dark/60 font-medium leading-relaxed">
-              Browse our comprehensive range of pharmaceutical products, manufactured to the highest global quality standards.
+              Explore our wide range of pharmaceutical products from the leading PCD Pharma Franchise in India, offering monopoly rights and third party manufacturing in Chandigarh, Panchkula, and Himachal.
             </p>
           </div>
 

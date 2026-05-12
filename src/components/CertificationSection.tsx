@@ -16,7 +16,7 @@ const CertificationBadge = ({ name }: CertProps) => {
         <div className="relative w-16 h-16 md:w-20 md:h-20 grayscale hover:grayscale-0 transition-all duration-300">
           <Image
             src={`/icons/${name}.png`}
-            alt={`${name} Certification`}
+            alt={`${name} Certified Pharmaceutical Company - Renish Pharmaceutical`}
             fill
             sizes="(max-width: 768px) 64px, 80px"
             className="object-contain"

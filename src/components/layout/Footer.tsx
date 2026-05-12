@@ -73,7 +73,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-surface-dark/60 max-w-sm leading-relaxed font-medium">
-              Precision-engineered medicines, backed by global standards and a vision for healthier generations. Our promise, your health.
+              Renish Pharmaceutical is the best <span className="text-brand-primary font-bold">PCD pharma franchise company in Chandigarh</span> and Panchkula. We offer monopoly rights and specialized third party manufacturing with global quality standards.
             </p>
 
             <div className="flex items-center gap-3">
