@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://renishpharma.com/sitemap.xml
+Sitemap: https://www.renishpharmaceutical.com/sitemap.xml

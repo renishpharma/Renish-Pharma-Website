@@ -29,8 +29,8 @@ export default function Home() {
     "@type": "PharmaceuticalBusiness",
     "name": "Renish Pharmaceutical",
     "alternateName": "Renish Pharma",
-    "url": "https://renishpharma.com",
-    "logo": "https://renishpharma.com/logo/renishLogo.svg",
+    "url": "https://www.renishpharmaceutical.com",
+    "logo": "https://www.renishpharmaceutical.com/logo/renishLogo.svg",
     "description": "Top PCD pharma franchise in india and Best PCD pharma franchise company. Offering monopoly rights and third party manufacturing in Chandigarh, Panchkula, and Himachal.",
     "address": {
       "@type": "PostalAddress",

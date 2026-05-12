@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://renishpharma.com",
+    url: "https://www.renishpharmaceutical.com",
     title: "Renish Pharmaceutical | Top PCD Pharma Franchise in India",
     description: "Leading PCD Pharma Franchise company offering monopoly rights and third-party manufacturing services across India.",
     siteName: "Renish Pharmaceutical",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://renishpharma.com",
+    canonical: "https://www.renishpharmaceutical.com",
   },
   icons: {
     icon: "/favicon_io/favicon.ico",
