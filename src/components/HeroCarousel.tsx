@@ -46,14 +46,14 @@ export default function HeroCarousel() {
   if (loading) {
     return (
       <div className="absolute inset-0 z-0 bg-surface-light">
-        <div className="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent z-10" />
         <Image
-          src="/images/hero_bg.webp"
+          src="/images/hero_image.webp"
           alt="Loading..."
           fill
           priority
-          className="object-cover opacity-20"
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-linear-to-r from-white via-white/70 to-surface-light/30 z-10" />
       </div>
     );
   }
