@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   motion,
@@ -10,6 +10,25 @@ import {
 } from "framer-motion";
 
 export default function ParallaxElements() {
+  const [mounted, setMounted] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  if (!mounted || !isLargeScreen) return null;
+
+  return <ParallaxElementsContent />;
+}
+
+function ParallaxElementsContent() {
   const { scrollYProgress } = useScroll();
 
   // Vertical movement

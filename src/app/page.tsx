@@ -40,7 +40,7 @@ export default function Home() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-XXXXXXXXXX",
+      "telephone": "+91-9115990072",
       "contactType": "customer service"
     },
     "keywords": "Top PCD pharma franchise in india, Best PCD pharma franchise, Top generic pharma company, Monopoly rights, Third party manufacturing, In chandigarh, In panchkula, In himachal"

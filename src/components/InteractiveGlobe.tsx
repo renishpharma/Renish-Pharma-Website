@@ -7,6 +7,9 @@ export default function InteractiveGlobe() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Only run Interactive Globe on desktop screens (width >= 1024px)
+    if (window.innerWidth < 1024) return;
+
     if (!containerRef.current) return;
 
     const width = containerRef.current.clientWidth;

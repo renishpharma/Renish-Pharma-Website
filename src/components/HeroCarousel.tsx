@@ -48,7 +48,7 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 z-0 bg-surface-light">
         <div className="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent z-10" />
         <Image
-          src="/images/hero_bg.png"
+          src="/images/hero_bg.webp"
           alt="Loading..."
           fill
           priority
@@ -58,48 +58,35 @@ export default function HeroCarousel() {
     );
   }
 
+  const getOptimizedImageUrl = (url: string, width: number) => {
+    if (url.startsWith("/")) return url;
+    return `/_next/image?url=${encodeURIComponent(url)}&w=${width}&q=75`;
+  };
+
   const renderImage = (img: any, isPriority: boolean) => {
     // Defensive check for legacy data
-    const desktopUrl = img.desktop?.url || img.url || "/images/hero_bg.png";
+    const desktopUrl = img.desktop?.url || img.url || "/images/hero_bg.webp";
     const tabletUrl = img.tablet?.url || desktopUrl;
     const mobileUrl = img.mobile?.url || desktopUrl;
 
+    const optDesktop = getOptimizedImageUrl(desktopUrl, 1920);
+    const optTablet = getOptimizedImageUrl(tabletUrl, 1080);
+    const optMobile = getOptimizedImageUrl(mobileUrl, 640);
+
     return (
-      <>
+      <picture className="absolute inset-0 w-full h-full">
         {/* Desktop Image */}
-        <div className="hidden lg:block absolute inset-0">
-          <Image
-            src={desktopUrl}
-            alt="Top PCD Pharma Franchise in India - Renish Pharmaceutical"
-            fill
-            priority={isPriority}
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
+        <source media="(min-width: 1024px)" srcSet={optDesktop} />
         {/* Tablet Image */}
-        <div className="hidden sm:block lg:hidden absolute inset-0">
-          <Image
-            src={tabletUrl}
-            alt="Best PCD Pharma Franchise Company - Renish Pharmaceutical"
-            fill
-            priority={isPriority}
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        {/* Mobile Image */}
-        <div className="block sm:hidden absolute inset-0">
-          <Image
-            src={mobileUrl}
-            alt="Top Generic Pharma Company in Chandigarh - Renish Pharmaceutical"
-            fill
-            priority={isPriority}
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-      </>
+        <source media="(min-width: 640px)" srcSet={optTablet} />
+        {/* Mobile Image (Fallback) */}
+        <img
+          src={optMobile}
+          alt="Top PCD Pharma Franchise in India - Renish Pharmaceutical"
+          className="object-cover w-full h-full absolute inset-0"
+          loading={isPriority ? "eager" : "lazy"}
+        />
+      </picture>
     );
   };
 
@@ -116,7 +103,7 @@ export default function HeroCarousel() {
             className="absolute inset-0"
           >
             <Image
-              src="/images/hero_bg.png"
+              src="/images/hero_image.webp"
               alt="Renish Pharmaceutical Fallback"
               fill
               sizes="100vw"

@@ -5,10 +5,10 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "/images/i_change/1.png",
-  "/images/i_change/2.png",
-  "/images/i_change/3.png",
-  "/images/i_change/4.png",
+  "/images/i_change/1.webp",
+  "/images/i_change/2.webp",
+  "/images/i_change/3.webp",
+  "/images/i_change/4.webp",
 ];
 
 export default function CommitmentCarousel() {
