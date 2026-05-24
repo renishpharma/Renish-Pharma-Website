@@ -11,19 +11,12 @@ import {
 
 export default function ParallaxElements() {
   const [mounted, setMounted] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  if (!mounted || !isLargeScreen) return null;
+  if (!mounted) return null;
 
   return <ParallaxElementsContent />;
 }
